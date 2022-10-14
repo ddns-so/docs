@@ -69,8 +69,7 @@ GET 请求，请求的内容如下：
   }
 }
 ```
-[截图1](https://github.com/ddns-so/docs/blob/main/%E6%88%AA%E5%9B%BE1.png)
-[截图2](https://github.com/ddns-so/docs/blob/main/%E6%88%AA%E5%9B%BE2.png)
+[截图1](https://github.com/ddns-so/docs/blob/main/%E6%88%AA%E5%9B%BE1.png) [截图2](https://github.com/ddns-so/docs/blob/main/%E6%88%AA%E5%9B%BE2.png)
 
 形式2：[https://api.ddns.so/name/brantly.eth?is_show_subdomains=yes](https://api.ddns.so/name/brantly.eth?is_show_subdomains=yes)
 
@@ -124,8 +123,7 @@ GET 请求，请求的内容如下：
   }
 }
 ```
-[截图1](https://www.notion.so/DDNS-c4455da295134b9aac3f04d362491d09)
-[截图2](https://www.notion.so/DDNS-c4455da295134b9aac3f04d362491d09)
+[截图1](https://github.com/ddns-so/docs/blob/main/%E6%88%AA%E5%9B%BE1.png) [截图2](https://github.com/ddns-so/docs/blob/main/%E6%88%AA%E5%9B%BE2.png)
 
 形式3：[https://api.ddns.so/name/zzzzzzzzzzzzzzzzzzzzz.dot](https://api.ddns.so/name/zzzzzzzzzzzzzzzzzzzzz.dot)
 
@@ -169,8 +167,7 @@ GET 请求，请求的内容如下：
   }
 }
 ```
-[截图1](https://github.com/120821/blob/main/%E6%88%AA%E5%9B%BE1.png)
-[截图2](https://github.com/120821/blob/main/%E6%88%AA%E5%9B%BE2.png)
+[截图1](https://github.com/ddns-so/docs/blob/main/%E6%88%AA%E5%9B%BE1.png) [截图2](https://github.com/ddns-so/docs/blob/main/%E6%88%AA%E5%9B%BE2.png)
 
 形式4：[https://api.ddns.so/name/zzzzzzzzzzzzzzzzzzzzz.dot?is_show_subdomains=yes](https://api.ddns.so/name/zzzzzzzzzzzzzzzzzzzzz.dot?is_show_subdomains=yes)
 
@@ -225,6 +222,7 @@ GET 请求，请求的内容如下：
   }
 }
 ```
+[截图1](https://github.com/ddns-so/docs/blob/main/%E6%88%AA%E5%9B%BE1.png) [截图2](https://github.com/ddns-so/docs/blob/main/%E6%88%AA%E5%9B%BE2.png)
 
 ### 接口2：反向解析（根据 ETH地址 ，获得 ens / pns 域名）
 
@@ -271,3 +269,7 @@ GET 请求，请求的内容如下：
   ]
 }
 ```
+![截图1](https://github.com/ddns-so/docs/blob/main/%E6%88%AA%E5%9B%BE1.png)
+截图1
+![截图2](https://github.com/ddns-so/docs/blob/main/%E6%88%AA%E5%9B%BE2.png)
+截图2
