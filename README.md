@@ -50,6 +50,8 @@ Form 1 returns the following contents:
     "cost": "0",  // cost
     "expiryDate": "2032-05-04 05:50:24 +0800",  // Indicates the expiration time of the query domain name
     "registrationDate": "2020-02-07 02:23:40 +0800",  // Indicates the registration time of the query domain name
+    //
+    // The following records are all from figure1
     "records": {
       // contenthash
       "contenthash": "0xe3010170122022fb6413aa794d5eb7a3906655f50f5ac41cbdd7933bc277f7192c9e2177c792",
@@ -66,6 +68,10 @@ Form 1 returns the following contents:
   }
 }
 ```
+
+As shown in the figure1, the setting interface of the ETH background
+<p align="center"><img src="image-eth.png" /></p>
+<p align="center">figure1: the setting interface of the ETHbackground</p>
 
 ### Form 2：/name/vitalik.eth?is_show_subdomains=yes
 
@@ -90,6 +96,7 @@ Form 1 returns the following contents:
     "cost": "0",  // cost
     "expiryDate": "2032-05-04 05:50:24 +0800",  // Indicates the expiration time of the query domain name
     "registrationDate": "2020-02-07 02:23:40 +0800",  // Indicates the registration time of the query domain name
+    // The following records are all from figure2
     "records": {
       // contenthash
       "contenthash": "0xe3010170122022fb6413aa794d5eb7a3906655f50f5ac41cbdd7933bc277f7192c9e2177c792",
@@ -114,6 +121,10 @@ Form 1 returns the following contents:
   }
 }
 ```
+
+As shown in the figure1, the setting interface of the ETH background
+<p align="center"><img src="image-eth.png" /></p>
+<p align="center">figure1: the setting interface of the ETHbackground</p>
 
 ### Form 3：/name/zzzzzzzzzzzzzzzzzzzzz.dot
 
@@ -156,9 +167,9 @@ Form 3 returns the following contents:
   }
 }
 ```
-As shown in the figure1, the setting interface of the DOT background
+As shown in the figure2, the setting interface of the DOT background
 <p align="center"><img src="image-dot.png" /></p>
-<p align="center">figure1: the setting interface of the DOT background</p>
+<p align="center">figure2: the setting interface of the DOT background</p>
 
 ### Form 4：/name/zzzzzzzzzzzzzzzzzzzzz.dot?is_show_subdomains=yes
 
@@ -213,6 +224,6 @@ As shown in the figure1, the setting interface of the DOT background
 }
 ```
 
-As shown in the figure1, the setting interface of the DOT background
+As shown in the figure2, the setting interface of the DOT background
 <p align="center"><img src="image-dot.png" /></p>
-<p align="center">figure1: the setting interface of the DOT background</p>
+<p align="center">figure2: the setting interface of the DOT background</p>

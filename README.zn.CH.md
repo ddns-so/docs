@@ -64,6 +64,10 @@ GET 请求，请求的内容如下：
 }
 ```
 
+<center>如图1所示, ETH域名的后台设置界面</center>
+<p align="center"><img src="image-dot.png" /></p>
+<p align="center">图1: ETH域名的后台设置界面</p>
+
 ### 形式2：/name/vitalik.eth?is_show_subdomains=yes
 
 （在形式1的基础上，增加参数is_show_subdomains, 如果等于yes，就会显示该域名的subdomains的详细内容，得到这样的结果）
@@ -112,6 +116,10 @@ GET 请求，请求的内容如下：
 }
 ```
 
+<center>如图1所示, ETH域名的后台设置界面</center>
+<p align="center"><img src="image-dot.png" /></p>
+<p align="center">图1: ETH域名的后台设置界面</p>
+
 形式3：/name/zzzzzzzzzzzzzzzzzzzzz.dot
 
 形式3返回的内容如下：
@@ -154,9 +162,9 @@ GET 请求，请求的内容如下：
 }
 ```
 
-如图1所示, DOT域名的后台设置界面
+如图2所示, DOT域名的后台设置界面
 <p align="center"><img src="image-dot.png" /></p>
-<p align="center">图1: the setting interface of the DOT background</p>
+<p align="center">图2: DOT域名的后台设置界面</p>
 
 形式4：/name/zzzzzzzzzzzzzzzzzzzzz.dot?is_show_subdomains=yes
 
@@ -209,6 +217,6 @@ GET 请求，请求的内容如下：
 }
 ```
 
-<center>如图1所示, DOT域名的后台设置界面</center>
+<center>如图2所示, DOT域名的后台设置界面</center>
 <p align="center"><img src="image-dot.png" /></p>
-<p align="center">图1: the setting interface of the DOT background</p>
+<p align="center">图2: DOT域名的后台设置界面</p>
