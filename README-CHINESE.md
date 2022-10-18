@@ -3,7 +3,6 @@
 
 - [接口](https://github.com/ddns-so/docs/blob/main/README-CHINESE.md#api%E6%8E%A5%E5%8F%A3)
 	- [接口1：某个.eth .dot域名的详细信息](https://github.com/ddns-so/docs/blob/main/README-CHINESE.md#%E6%8E%A5%E5%8F%A31-%E6%9F%90%E4%B8%AAeth--dot-%E5%9F%9F%E5%90%8D%E7%9A%84%E8%AF%A6%E7%BB%86%E4%BF%A1%E6%81%AF)
-	- [接口2：反向解析（根据 ETH地址 ，获得 ens / pns 域名）](https://github.com/ddns-so/docs/blob/main/README-CHINESE.md#%E6%8E%A5%E5%8F%A32%E5%8F%8D%E5%90%91%E8%A7%A3%E6%9E%90%E6%A0%B9%E6%8D%AE-eth%E5%9C%B0%E5%9D%80-%E8%8E%B7%E5%BE%97-ens--pns-%E5%9F%9F%E5%90%8D)
 
 <!-- /TOC -->
 
@@ -66,7 +65,10 @@ GET 请求，请求的内容如下：
   }
 }
 ```
-[截图1](https://github.com/ddns-so/docs/blob/main/%E6%88%AA%E5%9B%BE1.png) [截图2](https://github.com/ddns-so/docs/blob/main/%E6%88%AA%E5%9B%BE2.png)
+![截图1](./截图1.png)
+截图1
+![截图2](./截图2.png)
+截图2
 
 形式2：[https://api.ddns.so/name/brantly.eth?is_show_subdomains=yes](https://api.ddns.so/name/brantly.eth?is_show_subdomains=yes)
 
@@ -119,7 +121,10 @@ GET 请求，请求的内容如下：
   }
 }
 ```
-[截图1](https://github.com/ddns-so/docs/blob/main/%E6%88%AA%E5%9B%BE1.png) [截图2](https://github.com/ddns-so/docs/blob/main/%E6%88%AA%E5%9B%BE2.png)
+![截图1](./截图1.png)
+截图1
+![截图2](./截图2.png)
+截图2
 
 形式3：[https://api.ddns.so/name/zzzzzzzzzzzzzzzzzzzzz.dot](https://api.ddns.so/name/zzzzzzzzzzzzzzzzzzzzz.dot)
 
@@ -130,7 +135,7 @@ GET 请求，请求的内容如下：
   "result": "success",     // 请求成功的标志
   "data": {               // 下面是具体的返回内容
     "name": "zzzzzzzzzzzzzzzzzzzzz.dot",   // 表示查询域名，完整的域名，包含.eth/.dot
-    "namehash": "",         // nameHash
+    "namehash": "0xe07a052cca727930eaed3b1f7551eaf3a9f2aa71122ad910db6776dd1aeb4681",         // nameHash
     "labelName": "zzzzzzzzzzzzzzzzzzzzz",  // labelName
     // labelhash
     "labelhash": "0xc40a066a5a14b7cf1a860b96cab9c3b5b945f77824de421109012bed498c151b",
@@ -162,7 +167,10 @@ GET 请求，请求的内容如下：
   }
 }
 ```
-[截图1](https://github.com/ddns-so/docs/blob/main/%E6%88%AA%E5%9B%BE1.png) [截图2](https://github.com/ddns-so/docs/blob/main/%E6%88%AA%E5%9B%BE2.png)
+![截图1](./截图1.png)
+截图1
+![截图2](./截图2.png)
+截图2
 
 形式4：[https://api.ddns.so/name/zzzzzzzzzzzzzzzzzzzzz.dot?is_show_subdomains=yes](https://api.ddns.so/name/zzzzzzzzzzzzzzzzzzzzz.dot?is_show_subdomains=yes)
 
@@ -175,7 +183,7 @@ GET 请求，请求的内容如下：
   "result": "success",   // 请求成功的标志
   "data": {             // 下面是具体的返回内容
     "name": "zzzzzzzzzzzzzzzzzzzzz.dot",   // 表示查询域名
-    "namehash": "",  // namehash
+    "namehash": "0xe07a052cca727930eaed3b1f7551eaf3a9f2aa71122ad910db6776dd1aeb4681",  // namehash
     "labelName": "zzzzzzzzzzzzzzzzzzzzz",  // labelname
     // labelhash
     "labelhash": "0xc40a066a5a14b7cf1a860b96cab9c3b5b945f77824de421109012bed498c151b",
@@ -216,52 +224,8 @@ GET 请求，请求的内容如下：
   }
 }
 ```
-[截图1](https://github.com/ddns-so/docs/blob/main/%E6%88%AA%E5%9B%BE1.png) [截图2](https://github.com/ddns-so/docs/blob/main/%E6%88%AA%E5%9B%BE2.png)
-
-### 接口2：反向解析（根据 ETH地址 ，获得 ens / pns 域名）
-
-形式1：https://api.ddns.do/reverse/address?type=eth
-
-会返回address的所有eth域名
-
-- [https://api.ddns.so/reverse/0x2db2145ec2d26a1809cb2cf8785c6da94f992d99?type=eth](https://api.ddns.so/reverse/0x2db2145ec2d26a1809cb2cf8785c6da94f992d99?type=eth)
-
-参数type等于eth, 会显示address“0x2db2145ec2d26a1809cb2cf8785c6da94f992d99”的所有ens域名
-
-```jsx
-{
-  "result": "success",     // 请求成功的标志
-  // 表示查询的address
-  "address": "0x2db2145ec2d26a1809cb2cf8785c6da94f992d99",
-  // 下面是具体的返回内容，包含该address所拥有的所有的.eth域名
-  "data": [
-    "pomeriumfoundation.eth",
-    "precede.eth"
-  ]
-}
-```
-
-形式2：https://api.ddns.do/reverse/0xabcd?type=dot
-
-会返回0xabcd的所有dot域名
-
-- [https://api.ddns.so/reverse/0x0b23E3588c906C3F723C58Ef4d6baEe7840A977c?type=dot](https://api.ddns.so/reverse/0x0b23E3588c906C3F723C58Ef4d6baEe7840A977c?type=dot)
-
-参数type等于dot, 会显示address ‘0x0b23E3588c906C3F723C58Ef4d6baEe7840A977c’ 的所有dot域名
-
-```jsx
-{
-  "result": "success",    // 请求成功的标志
-  // 表示查询的address
-  "address": "0x0b23E3588c906C3F723C58Ef4d6baEe7840A977c",
-  // 下面是具体的返回内容，包含该address所拥有的所有的.dot域名
-  "data": [
-    "zfd2.zzzzzzzzzzzzzzzzzzzzz.dot",
-    "zfd.zzzzzzzzzzzzzzzzzzzzz.dot"
-  ]
-}
-```
-![截图1](https://github.com/ddns-so/docs/blob/main/%E6%88%AA%E5%9B%BE1.png)
+![截图1](./截图1.png)
 截图1
-![截图2](https://github.com/ddns-so/docs/blob/main/%E6%88%AA%E5%9B%BE2.png)
+![截图2](./截图2.png)
 截图2
+

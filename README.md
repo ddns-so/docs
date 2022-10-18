@@ -5,7 +5,6 @@
 
 - [API Overview](https://github.com/ddns-so/docs#api接口)
 	- [API Overview1：Some The details of the eth/. dot domain name](https://github.com/ddns-so/docs#api-overview1-some-the-details-of-the-ethdot-domain-name)
-	- [API Overview2：Reverse resolution (obtain the ens/pns domain name according to the ETH address)](https://github.com/ddns-so/docs#interface-2-reverse-parsing-obtaining-the-enspns-domain-name-according-to-the-eth-address)
 
 <!-- /TOC -->
 
@@ -68,7 +67,10 @@ Form 1 returns the following contents:
   }
 }
 ```
-[sreenshot 1](https://github.com/ddns-so/docs/blob/main/%E6%88%AA%E5%9B%BE1.png) [sreenshot 2](https://github.com/ddns-so/docs/blob/main/%E6%88%AA%E5%9B%BE2.png)
+![screenshot 1](./截图1.png)
+screenshot 1
+![screenshot 2](./截图2.png)
+screenshot 2
 
 Form 2：[https://api.ddns.so/name/brantly.eth?is_show_subdomains=yes](https://api.ddns.so/name/brantly.eth?is_show_subdomains=yes)
 
@@ -121,7 +123,10 @@ Form 2：[https://api.ddns.so/name/brantly.eth?is_show_subdomains=yes](https://a
   }
 }
 ```
-[screenshot 1](https://github.com/ddns-so/docs/blob/main/%E6%88%AA%E5%9B%BE1.png) [screenshot 2](https://github.com/ddns-so/docs/blob/main/%E6%88%AA%E5%9B%BE2.png)
+![screenshot 1](./截图1.png)
+screenshot 1
+![screenshot 2](./截图2.png)
+screenshot 2
 
 Form 3：[https://api.ddns.so/name/zzzzzzzzzzzzzzzzzzzzz.dot](https://api.ddns.so/name/zzzzzzzzzzzzzzzzzzzzz.dot)
 
@@ -132,7 +137,7 @@ Form 3 returns the following contents:
   "result": "success",     // Flag of successful request
   "data": {               // The following is the specific returned content
     "name": "zzzzzzzzzzzzzzzzzzzzz.dot",   // Indicates the query domain name, including .eth/.dot
-    "namehash": "",         // nameHash
+    "namehash": "0xe07a052cca727930eaed3b1f7551eaf3a9f2aa71122ad910db6776dd1aeb4681",         // nameHash
     "labelName": "zzzzzzzzzzzzzzzzzzzzz",  // labelName
     // labelhash
     "labelhash": "0xc40a066a5a14b7cf1a860b96cab9c3b5b945f77824de421109012bed498c151b",
@@ -164,7 +169,10 @@ Form 3 returns the following contents:
   }
 }
 ```
-[screenshot 1](https://github.com/ddns-so/docs/blob/main/%E6%88%AA%E5%9B%BE1.png) [screenshot 2](https://github.com/ddns-so/docs/blob/main/%E6%88%AA%E5%9B%BE2.png)
+![screenshot 1](./截图1.png)
+screenshot 1
+![screenshot 2](./截图2.png)
+screenshot 2
 
 Form 4：[https://api.ddns.so/name/zzzzzzzzzzzzzzzzzzzzz.dot?is_show_subdomains=yes](https://api.ddns.so/name/zzzzzzzzzzzzzzzzzzzzz.dot?is_show_subdomains=yes)
 
@@ -177,7 +185,7 @@ Form 4：[https://api.ddns.so/name/zzzzzzzzzzzzzzzzzzzzz.dot?is_show_subdomains=
   "result": "success",     // Flag of successful request
   "data": {               // The following is the specific returned content
     "name": "zzzzzzzzzzzzzzzzzzzzz.dot",   // Indicates the query domain name, including .eth/.dot
-    "namehash": "",         // nameHash
+    "namehash": "0xe07a052cca727930eaed3b1f7551eaf3a9f2aa71122ad910db6776dd1aeb4681",         // nameHash
     "labelName": "zzzzzzzzzzzzzzzzzzzzz",  // labelName
     // labelhash
     "labelhash": "0xc40a066a5a14b7cf1a860b96cab9c3b5b945f77824de421109012bed498c151b",
@@ -220,52 +228,7 @@ Form 4：[https://api.ddns.so/name/zzzzzzzzzzzzzzzzzzzzz.dot?is_show_subdomains=
   }
 }
 ```
-[screenshot 1](https://github.com/ddns-so/docs/blob/main/%E6%88%AA%E5%9B%BE1.png) [screenshot 2](https://github.com/ddns-so/docs/blob/main/%E6%88%AA%E5%9B%BE2.png)
-
-### Interface 2: Reverse parsing (obtaining the ens/pns domain name according to the ETH address)
-
-Form 1：https://api.ddns.do/reverse/address?type=eth
-
-All eth domain names of address will be returned
-
-- [https://api.ddns.so/reverse/0x2db2145ec2d26a1809cb2cf8785c6da94f992d99?type=eth](https://api.ddns.so/reverse/0x2db2145ec2d26a1809cb2cf8785c6da94f992d99?type=eth)
-
-The parameter type is equal to eth, and all ens domain names of address "0x2db2145ec2d26a1809cb2cf8785c6da94f992d99" will be displayed
-
-```jsx
-{
-  "result": "success",     // Flag of successful request
-  // Indicates the address of the query
-  "address": "0x2db2145ec2d26a1809cb2cf8785c6da94f992d99",
-  // The following is the specific returned content, including all eth domain names owned by the address
-  "data": [
-    "pomeriumfoundation.eth",
-    "precede.eth"
-  ]
-}
-```
-
-Form 2：https://api.ddns.do/reverse/0xabcd?type=dot
-
-All dot domain names of 0xabcd will be returned
-
-- [https://api.ddns.so/reverse/0x0b23E3588c906C3F723C58Ef4d6baEe7840A977c?type=dot](https://api.ddns.so/reverse/0x0b23E3588c906C3F723C58Ef4d6baEe7840A977c?type=dot)
-
-The parameter type is equal to dot, and all dot domain names of address' 0x0b23E3588c906C3F723C58Ef4d6baEe7840A977c 'will be displayed
-
-```jsx
-{
-  "result": "success",    // Flag of successful request
-  // Indicates the address of the query
-  "address": "0x0b23E3588c906C3F723C58Ef4d6baEe7840A977c",
-  // The following is the specific returned content, including all dot domain names owned by the address
-  "data": [
-    "zfd2.zzzzzzzzzzzzzzzzzzzzz.dot",
-    "zfd.zzzzzzzzzzzzzzzzzzzzz.dot"
-  ]
-}
-```
-![screenshot 1](https://github.com/ddns-so/docs/blob/main/%E6%88%AA%E5%9B%BE1.png)
+![screenshot 1](./截图1.png)
 screenshot 1
-![screenshot 2](https://github.com/ddns-so/docs/blob/main/%E6%88%AA%E5%9B%BE2.png)
+![screenshot 2](./截图2.png)
 screenshot 2
