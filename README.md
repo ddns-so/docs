@@ -1,10 +1,10 @@
 <img src="https://camo.githubusercontent.com/9e5a57075a5bb3bab4d34b1c3eed3009973bc15ddb6f168c7fbf475d8f0e967f/68747470733a2f2f64617964617975703636362e6574682e64646e732e736f2f697066732f516d586d64535152506d684d666870487a6831585a356955617236447951723844624a753734384b75756f727475" width="78" height="78" />
 <!-- TOC depthFrom:1 depthTo:6 withLinks:1 orderedList:0 -->
 
-[中文版接口说明(Interface description in Chinese)](https://github.com/ddns-so/docs/blob/main/README-CHINESE.md)
+[中文版接口说明(Interface description in Chinese)](https://github.com/ddns-so/docs/blob/main/README.zn.CH.md)
 
-- [API](https://github.com/ddns-so/docs#api接口)
-	- [API Overview1：Some The details of the eth/. dot domain name](https://github.com/ddns-so/docs#api-overview1-some-the-details-of-the-ethdot-domain-name)
+- [API](https://github.com/ddns-so/docs#api)
+	- [API Overview1：Some The details of the eth/. dot domain name](https://github.com/ddns-so/docs#api-1-some-the-details-of-the-ethdot-domain-name)
 
 <!-- /TOC -->
 
@@ -157,10 +157,10 @@ Form 3 returns the following contents:
 }
 ```
 As shown in the figure 'image-dot.png', the setting interface of the DOT background
-![image-dot.png](./image-dot.png)
-<center>image-dot.png: Background setting interface of dot domain name</center>
+<p align="center"><img src="image-dot.png" /></p>
+<p align="center"><center>image-dot.png: the setting interface of the DOT background</center></p>
 
-### Form 4：[/name/zzzzzzzzzzzzzzzzzzzzz.dot?is_show_subdomains=yes](/name/zzzzzzzzzzzzzzzzzzzzz.dot?is_show_subdomains=yes)
+### Form 4：/name/zzzzzzzzzzzzzzzzzzzzz.dot?is_show_subdomains=yes
 
 (On the basis of Form 3, add the parameter is_show_subdomains. If it is equal to yes, the details of the subdomains of the domain name will be displayed to get this result.)
 
@@ -214,5 +214,5 @@ As shown in the figure 'image-dot.png', the setting interface of the DOT backgro
 ```
 
 As shown in the figure 'image dot. png', the setting interface of the DOT background
-![image-dot.png](./image-dot.png)
-<center>image-dot.png: the setting interface of the DOT background</center>
+<p align="center"><img src="image-dot.png" /></p>
+<p align="center"><center>image-dot.png: the setting interface of the DOT background</center></p>

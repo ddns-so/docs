@@ -1,8 +1,8 @@
 <img src="https://camo.githubusercontent.com/9e5a57075a5bb3bab4d34b1c3eed3009973bc15ddb6f168c7fbf475d8f0e967f/68747470733a2f2f64617964617975703636362e6574682e64646e732e736f2f697066732f516d586d64535152506d684d666870487a6831585a356955617236447951723844624a753734384b75756f727475" width="78" height="78" />
 <!-- TOC depthFrom:1 depthTo:6 withLinks:1 orderedList:0 -->
 
-- [接口](https://github.com/ddns-so/docs/blob/main/README-CHINESE.md#api%E6%8E%A5%E5%8F%A3)
-	- [接口1：某个.eth .dot域名的详细信息](https://github.com/ddns-so/docs/blob/main/README-CHINESE.md#%E6%8E%A5%E5%8F%A31-%E6%9F%90%E4%B8%AAeth--dot-%E5%9F%9F%E5%90%8D%E7%9A%84%E8%AF%A6%E7%BB%86%E4%BF%A1%E6%81%AF)
+- [接口](https://github.com/ddns-so/docs/blob/main/README.zn.CH.md#api%E6%8E%A5%E5%8F%A3)
+	- [接口1：某个.eth .dot域名的详细信息](https://github.com/ddns-so/docs/blob/main/README.zn.CH.md#%E6%8E%A5%E5%8F%A31-%E6%9F%90%E4%B8%AAeth--dot-%E5%9F%9F%E5%90%8D%E7%9A%84%E8%AF%A6%E7%BB%86%E4%BF%A1%E6%81%AF)
 
 <!-- /TOC -->
 
@@ -155,8 +155,8 @@ GET 请求，请求的内容如下：
 ```
 
 <center>如图'image dot. png'所示, DOT域名的后台设置界面</center>
-![image-dot.png](./image-dot.png)
-<center>图image-dot.png1: DOT域名的后台设置界面</center>
+<p align="center"><img src="image-dot.png" /></p>
+<p align="center"><center>image-dot.png: the setting interface of the DOT background</center></p>
 
 形式4：/name/zzzzzzzzzzzzzzzzzzzzz.dot?is_show_subdomains=yes
 
@@ -210,5 +210,5 @@ GET 请求，请求的内容如下：
 ```
 
 <center>如图'image dot. png'所示, DOT域名的后台设置界面</center>
-![image-dot.png](./image-dot.png)
-<center>图image-dot.png1: DOT域名的后台设置界面</center>
+<p align="center"><img src="image-dot.png" /></p>
+<p align="center"><center>image-dot.png: the setting interface of the DOT background</center></p>
