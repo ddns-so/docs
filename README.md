@@ -158,7 +158,7 @@ Form 3 returns the following contents:
 ```
 As shown in the figure 'image-dot.png', the setting interface of the DOT background
 <p align="center"><img src="image-dot.png" /></p>
-<p align="center"><center>image-dot.png: the setting interface of the DOT background</center></p>
+<p align="center">image-dot.png: the setting interface of the DOT background</p>
 
 ### Form 4：/name/zzzzzzzzzzzzzzzzzzzzz.dot?is_show_subdomains=yes
 
@@ -215,4 +215,4 @@ As shown in the figure 'image-dot.png', the setting interface of the DOT backgro
 
 As shown in the figure 'image dot. png', the setting interface of the DOT background
 <p align="center"><img src="image-dot.png" /></p>
-<p align="center"><center>image-dot.png: the setting interface of the DOT background</center></p>
+<p align="center">image-dot.png: the setting interface of the DOT background</p>

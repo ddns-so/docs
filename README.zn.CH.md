@@ -14,13 +14,13 @@
 
 GET 请求，请求的内容如下：
 
-形式1：https://api.ddns.so/name/zzzzzzzzzzzzzzzzzzzzz.dot
+形式1：/name/vitalik.eth
 
-形式2：https://api.ddns.so/name/zzzzzzzzzzzzzzzzzzzzz.dot?is_show_subdomains=yes
+形式2：/name/vitalik.eth?is_show_subdomains=yes
 
-形式3：https://api.ddns.so/name/brantly.eth
+形式3：/name/zzzzzzzzzzzzzzzzzzzzz.dot
 
-形式4：https://api.ddns.so/name/brantly.eth?is_show_subdomains=yes
+形式4：/name/zzzzzzzzzzzzzzzzzzzzz.dot?is_show_subdomains=yes
 
 返回结果举例：
 
@@ -64,7 +64,7 @@ GET 请求，请求的内容如下：
 }
 ```
 
-### 形式2：/name/brantly.eth?is_show_subdomains=yes
+### 形式2：/name/vitalik.eth?is_show_subdomains=yes
 
 （在形式1的基础上，增加参数is_show_subdomains, 如果等于yes，就会显示该域名的subdomains的详细内容，得到这样的结果）
 
@@ -154,9 +154,9 @@ GET 请求，请求的内容如下：
 }
 ```
 
-<center>如图'image dot. png'所示, DOT域名的后台设置界面</center>
+如图'image dot. png'所示, DOT域名的后台设置界面
 <p align="center"><img src="image-dot.png" /></p>
-<p align="center"><center>image-dot.png: the setting interface of the DOT background</center></p>
+<div><p align="center">图'image-dot.png': the setting interface of the DOT background</p></div>
 
 形式4：/name/zzzzzzzzzzzzzzzzzzzzz.dot?is_show_subdomains=yes
 
@@ -211,4 +211,4 @@ GET 请求，请求的内容如下：
 
 <center>如图'image dot. png'所示, DOT域名的后台设置界面</center>
 <p align="center"><img src="image-dot.png" /></p>
-<p align="center"><center>image-dot.png: the setting interface of the DOT background</center></p>
+<p align="center">图'image-dot.png': the setting interface of the DOT background</p>
