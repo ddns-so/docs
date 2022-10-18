@@ -10,19 +10,17 @@
 
 # API
 
-## API 1: Some The details of the eth/dot domain name
+## /name/<your-domain-name>: Query details of an eth/dot domain name
 
-Initiate request:
+HTTP GET request:
 
-GET request, the content of the request is as follows:
+- Form 1：/name/vitalik.eth
 
-Form 1：/name/vitalik.eth
+- Form 2：/name/vitalik.eth?is_show_subdomains=yes
 
-Form 2：/name/vitalik.eth?is_show_subdomains=yes
+- Form 3：/name/zzzzzzzzzzzzzzzzzzzzz.dot
 
-Form 3：/name/zzzzzzzzzzzzzzzzzzzzz.dot
-
-Form 4：/name/zzzzzzzzzzzzzzzzzzzzz.dot?is_show_subdomains=yes
+- Form 4：/name/zzzzzzzzzzzzzzzzzzzzz.dot?is_show_subdomains=yes
 
 
 Example of returned results:
