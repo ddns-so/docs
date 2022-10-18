@@ -1,116 +1,114 @@
 <img src="https://camo.githubusercontent.com/9e5a57075a5bb3bab4d34b1c3eed3009973bc15ddb6f168c7fbf475d8f0e967f/68747470733a2f2f64617964617975703636362e6574682e64646e732e736f2f697066732f516d586d64535152506d684d666870487a6831585a356955617236447951723844624a753734384b75756f727475" width="78" height="78" />
 <!-- TOC depthFrom:1 depthTo:6 withLinks:1 orderedList:0 -->
 
-- [接口](https://github.com/ddns-so/docs#api接口)
-	- [接口1：某个.eth .dot域名的详细信息](https://github.com/ddns-so/docs#%E6%8E%A5%E5%8F%A31-%E6%9F%90%E4%B8%AAeth--dot-%E5%9F%9F%E5%90%8D%E7%9A%84%E8%AF%A6%E7%BB%86%E4%BF%A1%E6%81%AF)
-	- [接口2：反向解析（根据 ETH地址 ，获得 ens / pns 域名）](https://github.com/ddns-so/docs#%E6%8E%A5%E5%8F%A32%E5%8F%8D%E5%90%91%E8%A7%A3%E6%9E%90%E6%A0%B9%E6%8D%AE-eth%E5%9C%B0%E5%9D%80-%E8%8E%B7%E5%BE%97-ens--pns-%E5%9F%9F%E5%90%8D)
+- [API Overview](https://github.com/ddns-so/docs#api接口)
+	- [API Overview1：Some The details of the eth/. dot domain name](https://github.com/ddns-so/docs#%E6%8E%A5%E5%8F%A31-%E6%9F%90%E4%B8%AAeth--dot-%E5%9F%9F%E5%90%8D%E7%9A%84%E8%AF%A6%E7%BB%86%E4%BF%A1%E6%81%AF)
+	- [API Overview2：Reverse resolution (obtain the ens/pns domain name according to the ETH address)](https://github.com/ddns-so/docs#%E6%8E%A5%E5%8F%A32%E5%8F%8D%E5%90%91%E8%A7%A3%E6%9E%90%E6%A0%B9%E6%8D%AE-eth%E5%9C%B0%E5%9D%80-%E8%8E%B7%E5%BE%97-ens--pns-%E5%9F%9F%E5%90%8D)
 
 <!-- /TOC -->
 
-## API接口
+## API Overview
 
-### 接口1: 某个.eth / .dot 域名的详细信息
+### API Overview1: Some The details of the eth/dot domain name
 
-发起请求：
+Initiate request:
 
-GET 请求，请求的内容如下：
+GET request, the content of the request is as follows:
 
-形式1：[https://api.ddns.so/name/zzzzzzzzzzzzzzzzzzzzz.dot](https://api.ddns.so/name/zzzzzzzzzzzzzzzzzzzzz.dot)
+Form 1：[https://api.ddns.so/name/zzzzzzzzzzzzzzzzzzzzz.dot](https://api.ddns.so/name/zzzzzzzzzzzzzzzzzzzzz.dot)
 
-形式2：[https://api.ddns.so/name/zzzzzzzzzzzzzzzzzzzzz.dot?is_show_subdomains=yes](https://api.ddns.so/name/zzzzzzzzzzzzzzzzzzzzz.dot?subdomains=yes)
+Form 2：[https://api.ddns.so/name/zzzzzzzzzzzzzzzzzzzzz.dot?is_show_subdomains=yes](https://api.ddns.so/name/zzzzzzzzzzzzzzzzzzzzz.dot?subdomains=yes)
 
-形式3：[https://api.ddns.so/name/brantly.eth](https://api.ddns.so/name/brantly.eth?is_show_subdomains=yes)
+Form 3：[https://api.ddns.so/name/brantly.eth](https://api.ddns.so/name/brantly.eth?is_show_subdomains=yes)
 
-形式4：[https://api.ddns.so/name/brantly.eth?is_show_subdomains=yes](https://api.ddns.so/name/brantly.eth?is_show_subdomains=yes)
+Form 4：[https://api.ddns.so/name/brantly.eth?is_show_subdomains=yes](https://api.ddns.so/name/brantly.eth?is_show_subdomains=yes)
 
-返回结果举例：
+Example of returned results:
 
-形式1：[https://api.ddns.so/name/vitalik.eth](https://api.ddns.so/name/vitalik.eth)
+Form 1：[https://api.ddns.so/name/vitalik.eth](https://api.ddns.so/name/vitalik.eth)
 
-形式1返回的内容如下：
+Form 1 returns the following contents:
 
 ```jsx
 {
-  "code": 1,                  // 请求成功的标志
-  "message": "success",       // 请求成功的标志
-  "result": {                 // 下面是具体的返回内容
-    "name": "vitalik.eth",    // 表示查询域名，完整的域名， 包含.eth/.dot
-    "nameHash": "",           // nameHash
-    "labelName": "vitalik",   // labelName，域名的名称，不包含.eth/.dot
+  "result": "success",       // Flag of successful request
+  "data": {                 // The following is the specific returned content
+    "name": "vitalik.eth",    // Indicates the query domain name, including. eth/. dot
+    "nameHash": "0xee6c4522aab0003e8d14cd40a6af439055fd2577951148c14b6cea9a53475835",           // nameHash
+    "labelName": "vitalik",   // labelName，the name of the domain name, excluding. eth/. dot
 
     // labelhash
     "labelhash": "0xaf2caa1c2ca1d027f1ac823b529d0a67cd144264b2789fa2ea4d63a67c7103cc",
-    // 该域名的所有者
+    // The owner of this domain name
     "owner": "0xd8da6bf26964af9d7eed9e03e53415d37aa96045",
-    // 父级域名的labelHash
+    // Lablehash of parent domain name
     "parent": "0x93cdeb708b7545dc668eb9280176169d1c33cfd8ed6f04690a0bcc88a93fc4ae",
-    "subdomainCount": 0,  // 表示查询域名的子域名数量
+    "subdomainCount": 0,  // Indicates the number of subdomains of the query domain name
     "ttl": null,  // ttl
-    "cost": "0",  // 成本
-    "expiryDate": "2032-05-04 05:50:24 +0800",  // 表示查询域名的到期时间
-    "registrationDate": "2020-02-07 02:23:40 +0800",  // 表示查询域名的注册时间
-    // 下面的records的内容，都来自于截图2
+    "cost": "0",  // cost
+    "expiryDate": "2032-05-04 05:50:24 +0800",  // Indicates the expiration time of the query domain name
+    "registrationDate": "2020-02-07 02:23:40 +0800",  // Indicates the registration time of the query domain name
+    // The following records are all from screenshot 2
     "records": {
       // contenthash
       "contenthash": "0xe3010170122022fb6413aa794d5eb7a3906655f50f5ac41cbdd7933bc277f7192c9e2177c792",
-      // 表示拥有者的ETH address
+      // Indicates the owner's ETH address
       "eth": "0xd8da6bf26964af9d7eed9e03e53415d37aa96045",
-      "dot": "",    // 表示Polkadot地址
-      "btc": "",    // 表示btc地址
-      // 下面的text的这些内容，都来自于截图1
+      "dot": "",    // Indicates Polkadot address
+      "btc": "",    // Indicates the btc address
+      // These contents of the following text are from the screenshot 1
       "text": [
-        "url",      // 表示Twitter的URL
-        "avatar"    // 表示头像的URL
+        "url",      // URL representing Twitter
+        "avatar"    // The URL representing the avatar
       ],
-      "pubkey": ""  // 表示公共密钥
+      "pubkey": ""  // Represents a public key
     }
   }
 }
 ```
-[截图1](https://github.com/ddns-so/docs/blob/main/%E6%88%AA%E5%9B%BE1.png) [截图2](https://github.com/ddns-so/docs/blob/main/%E6%88%AA%E5%9B%BE2.png)
+[sreenshot 1](https://github.com/ddns-so/docs/blob/main/%E6%88%AA%E5%9B%BE1.png) [sreenshot 2](https://github.com/ddns-so/docs/blob/main/%E6%88%AA%E5%9B%BE2.png)
 
-形式2：[https://api.ddns.so/name/brantly.eth?is_show_subdomains=yes](https://api.ddns.so/name/brantly.eth?is_show_subdomains=yes)
+Form 2：[https://api.ddns.so/name/brantly.eth?is_show_subdomains=yes](https://api.ddns.so/name/brantly.eth?is_show_subdomains=yes)
 
-（多返回了subdomains的内容）
+(More subdomains are returned)
 
-（在形式1的基础上，增加参数is_show_subdomains, 如果等于yes，就会显示该域名的subdomains的详细内容，得到这样的结果）
+(On the basis of Form 1, add the parameter is_ show_ Subdomains. If it is equal to yes, the details of the subdomains of the domain name will be displayed. The result is as follows)
 
 ```jsx
 {
-  "code": 1,                  // 请求成功的标志
-  "message": "success",       // 请求成功的标志
-  "result": {                 // 下面是具体的返回内容
-    "name": "vitalik.eth",    // 表示查询域名，完整的域名， 包含.eth/.dot
-    "nameHash": "",           // nameHash
-    "labelName": "vitalik",   // labelName，域名的名称，不包含.eth/.dot
+  "result": "success",       // Flag of successful request
+  "data": {                 // The following is the specific returned content
+    "name": "vitalik.eth",    // Indicates the query domain name, including. eth/. dot
+    "nameHash": "0xee6c4522aab0003e8d14cd40a6af439055fd2577951148c14b6cea9a53475835",           // nameHash
+    "labelName": "vitalik",   // labelName，the name of the domain name, excluding. eth/. dot
 
     // labelhash
     "labelhash": "0xaf2caa1c2ca1d027f1ac823b529d0a67cd144264b2789fa2ea4d63a67c7103cc",
-    // 该域名的所有者
+    // The owner of this domain name
     "owner": "0xd8da6bf26964af9d7eed9e03e53415d37aa96045",
-    // 父级域名的labelHash
+    // Lablehash of parent domain name
     "parent": "0x93cdeb708b7545dc668eb9280176169d1c33cfd8ed6f04690a0bcc88a93fc4ae",
-    "subdomainCount": 3,  // 表示查询域名的子域名数量
+    "subdomainCount": 0,  // Indicates the number of subdomains of the query domain name
     "ttl": null,  // ttl
-    "cost": "0",  // 成本
-    "expiryDate": "2032-05-04 05:50:24 +0800",  // 表示查询域名的到期时间
-    "registrationDate": "2020-02-07 02:23:40 +0800",  // 表示查询域名的注册时间
-    // 下面的records的内容，都来自于截图2
+    "cost": "0",  // cost
+    "expiryDate": "2032-05-04 05:50:24 +0800",  // Indicates the expiration time of the query domain name
+    "registrationDate": "2020-02-07 02:23:40 +0800",  // Indicates the registration time of the query domain name
+    // The following records are all from screenshot 2
     "records": {
       // contenthash
       "contenthash": "0xe3010170122022fb6413aa794d5eb7a3906655f50f5ac41cbdd7933bc277f7192c9e2177c792",
-      // 表示拥有者的ETH address
+      // Indicates the owner's ETH address
       "eth": "0xd8da6bf26964af9d7eed9e03e53415d37aa96045",
-      "dot": "",    // 表示Polkadot地址
-      "btc": "",    // 表示btc地址
-      // 下面的text的这些内容，都来自于截图1
+      "dot": "",    // Indicates Polkadot address
+      "btc": "",    // Indicates the btc address
+      // These contents of the following text are from the screenshot 1
       "text": [
-        "url",      // 表示Twitter的URL
-        "avatar"    // 表示头像的URL
+        "url",      // URL representing Twitter
+        "avatar"    // The URL representing the avatar
       ],
-      "pubkey": ""  // 表示公共密钥
+      "pubkey": ""  // Represents a public key
     },
-    // 查询的域名的所有子域名，包含每个子域名的完整的域名名称、id和子域名
+    // All subdomain names of the queried domain name, including the complete domain name, ID and sub domain name of each sub domain name
     "subdomains": [
       {
         "id": "0x1bd80197873de285b67cc9dcf3b2bf196ec112b701f34e89dfc4bfc9fb17b0b2",
@@ -121,92 +119,92 @@ GET 请求，请求的内容如下：
   }
 }
 ```
-[截图1](https://github.com/ddns-so/docs/blob/main/%E6%88%AA%E5%9B%BE1.png) [截图2](https://github.com/ddns-so/docs/blob/main/%E6%88%AA%E5%9B%BE2.png)
+[screenshot 1](https://github.com/ddns-so/docs/blob/main/%E6%88%AA%E5%9B%BE1.png) [screenshot 2](https://github.com/ddns-so/docs/blob/main/%E6%88%AA%E5%9B%BE2.png)
 
-形式3：[https://api.ddns.so/name/zzzzzzzzzzzzzzzzzzzzz.dot](https://api.ddns.so/name/zzzzzzzzzzzzzzzzzzzzz.dot)
+Form 3：[https://api.ddns.so/name/zzzzzzzzzzzzzzzzzzzzz.dot](https://api.ddns.so/name/zzzzzzzzzzzzzzzzzzzzz.dot)
 
-形式3返回的内容如下：
+Form 3 returns the following contents:
 
 ```jsx
 {
-  "code": 1,                // 请求成功的标志
-  "message": "success",     // 请求成功的标志
-  "result": {               // 下面是具体的返回内容
-    "name": "zzzzzzzzzzzzzzzzzzzzz.dot",   // 表示查询域名，完整的域名，包含.eth/.dot
+  "result": "success",     // Flag of successful request
+  "data": {               // The following is the specific returned content
+    "name": "zzzzzzzzzzzzzzzzzzzzz.dot",   // Indicates the query domain name, including .eth/.dot
     "namehash": "",         // nameHash
     "labelName": "zzzzzzzzzzzzzzzzzzzzz",  // labelName
     // labelhash
     "labelhash": "0xc40a066a5a14b7cf1a860b96cab9c3b5b945f77824de421109012bed498c151b",
-    // 表示查询域名的拥有者的address
+    // Indicates the address of the owner of the query domain name
     "owner": "0x0b23e3588c906c3f723c58ef4d6baee7840a977c",
-    // 表示查询域名的父级域名的labelHash
+    // LabelHash representing the parent domain name of the query domain name
     "parent": "0x3fce7d1364a893e213bc4212792b517ffc88f5b13b86c8ef9c8d390c3a1370ce",
-    // 表示查询域名的到期时间
+    // Indicates the expiration time of the query domain name
     "expiryDate": "2024-06-25 23:47:06 +0800",
-    // 表示查询域名的注册时间
+    // Indicates the registration time of the query domain name
     "registrationDate": "2022-06-26 23:47:06 +0800",
-    // 表示查询域名的子域名数量
+    // Indicates the number of subdomains of the query domain name
     "subdomainCount": 12,
 
-    // 下面的这些内容，都来自于截图2
+    // The following contents are all from screenshot 2
     "records": {
-      "DOT": "168EsqUaRF6teT9enPx9X6dbHR7JbWN5hDeNAKtHGUPh4RCy", // 表示Polkadot地址
-      "ETH": "0x0b23E3588c906C3F723C58Ef4d6baEe7840A977c",  // 表示Eth地址
-      "BTC": "36b6xyDZzvUEJ7QfzqhPzFMKbwzHLZ5tFc",          // 表示btc地址
-      "IPFS": "QmQhCuJqSk9fF58wU58oiaJ1qbZwQ1eQ8mVzNWe7tgLNiD",  // ipfs
-      "Email": "some@email1.com",  // 表示email地址
-      "Notice": "00302notice",     // 表示Polkadot地址
-      "twitter": "https://twitter.com/zou326865641",   // 表示Twitter地址
-      "github": "https://github.com/hebochang",        // 表示github地址
-      "Url": "https://twitter.com/zou32686564",        // 表示twitter url
-      "Avatar": "0050103avatar",                       // 表示avatar地址
-      "CNAME": "a.b.c.d.com"                           // 表示c name地址
+      "dot": "168EsqUaRF6teT9enPx9X6dbHR7JbWN5hDeNAKtHGUPh4RCy", // Indicates polkadot address
+      "eth": "0x0b23E3588c906C3F723C58Ef4d6baEe7840A977c",  // Indicates eth address
+      "btc": "36b6xyDZzvUEJ7QfzqhPzFMKbwzHLZ5tFc",          // Indicates btc address
+      "ipfs": "QmQhCuJqSk9fF58wU58oiaJ1qbZwQ1eQ8mVzNWe7tgLNiD",  // ipfs
+      "email": "some@email1.com",  // Indicates email address
+      "notice": "00302notice",     // Indicates notice address
+      "twitter": "https://twitter.com/zou326865641",   // Indicates twitter address
+      "github": "https://github.com/hebochang",        // Indicates github address
+      "url": "https://twitter.com/zou32686564",        // Indicates twitter url
+      "avatar": "0050103avatar",                       // Indicates avatar address
+      "cname": "a.b.c.d.com"                           // Indicates cname address
     }
   }
 }
 ```
-[截图1](https://github.com/ddns-so/docs/blob/main/%E6%88%AA%E5%9B%BE1.png) [截图2](https://github.com/ddns-so/docs/blob/main/%E6%88%AA%E5%9B%BE2.png)
+[screenshot 1](https://github.com/ddns-so/docs/blob/main/%E6%88%AA%E5%9B%BE1.png) [screenshot 2](https://github.com/ddns-so/docs/blob/main/%E6%88%AA%E5%9B%BE2.png)
 
-形式4：[https://api.ddns.so/name/zzzzzzzzzzzzzzzzzzzzz.dot?is_show_subdomains=yes](https://api.ddns.so/name/zzzzzzzzzzzzzzzzzzzzz.dot?is_show_subdomains=yes)
+Form 4：[https://api.ddns.so/name/zzzzzzzzzzzzzzzzzzzzz.dot?is_show_subdomains=yes](https://api.ddns.so/name/zzzzzzzzzzzzzzzzzzzzz.dot?is_show_subdomains=yes)
 
-（多返回了subdomains的内容）
+(More subdomains are returned)
 
-（在形式3的基础上，增加参数is_show_subdomains, 如果等于yes，就会显示该域名的subdomains的详细内容，得到这样的结果）
+(On the basis of Form 3, add the parameter is_show_subdomains. If it is equal to yes, the details of the subdomains of the domain name will be displayed to get this result.)
 
 ```jsx
 {
-  "code": 1,              // 请求成功的标志
-  "message": "success",   // 请求成功的标志
-  "result": {             // 下面是具体的返回内容
-    "name": "zzzzzzzzzzzzzzzzzzzzz.dot",   // 表示查询域名
-    "namehash": "",  // namehash
-    "labelName": "zzzzzzzzzzzzzzzzzzzzz",  // labelname
+  "result": "success",     // Flag of successful request
+  "data": {               // The following is the specific returned content
+    "name": "zzzzzzzzzzzzzzzzzzzzz.dot",   // Indicates the query domain name, including .eth/.dot
+    "namehash": "",         // nameHash
+    "labelName": "zzzzzzzzzzzzzzzzzzzzz",  // labelName
     // labelhash
     "labelhash": "0xc40a066a5a14b7cf1a860b96cab9c3b5b945f77824de421109012bed498c151b",
-    // 表示查询域名的拥有者的address
+    // Indicates the address of the owner of the query domain name
     "owner": "0x0b23e3588c906c3f723c58ef4d6baee7840a977c",
-    // 表示查询域名的父级域名的labelHash
+    // LabelHash representing the parent domain name of the query domain name
     "parent": "0x3fce7d1364a893e213bc4212792b517ffc88f5b13b86c8ef9c8d390c3a1370ce",
+    // Indicates the expiration time of the query domain name
     "expiryDate": "2024-06-25 23:47:06 +0800",
-    // 表示查询域名的注册时间
+    // Indicates the registration time of the query domain name
     "registrationDate": "2022-06-26 23:47:06 +0800",
-    // 表示查询域名的子域名数量
+    // Indicates the number of subdomains of the query domain name
     "subdomainCount": 12,
-    <pre>// 下面的records的内容，都来自于截图2
+
+    // The following contents are all from screenshot 2
     "records": {
-      "DOT": "168EsqUaRF6teT9enPx9X6dbHR7JbWN5hDeNAKtHGUPh4RCy", // 表示Polkadot地址
-      "ETH": "0x0b23E3588c906C3F723C58Ef4d6baEe7840A977c",  // 表示Eth地址
-      "BTC": "36b6xyDZzvUEJ7QfzqhPzFMKbwzHLZ5tFc",          // 表示btc地址
-      "IPFS": "QmQhCuJqSk9fF58wU58oiaJ1qbZwQ1eQ8mVzNWe7tgLNiD",  // ipfs
-      "Email": "some@email1.com",  // 表示email地址
-      "Notice": "00302notice",     // 表示Polkadot地址
-      "twitter": "https://twitter.com/zou326865641",   // 表示Twitter地址
-      "github": "https://github.com/hebochang",        // 表示github地址
-      "Url": "https://twitter.com/zou32686564",        // 表示twitter url
-      "Avatar": "0050103avatar",                       // 表示avatar地址
-      "CNAME": "a.b.c.d.com"                           // 表示c name地址
-    },
-    // 查询的域名的所有子域名，包含每个子域名的完整的域名名称和拥有者的address
+      "dot": "168EsqUaRF6teT9enPx9X6dbHR7JbWN5hDeNAKtHGUPh4RCy", // Indicates polkadot address
+      "eth": "0x0b23E3588c906C3F723C58Ef4d6baEe7840A977c",  // Indicates eth address
+      "btc": "36b6xyDZzvUEJ7QfzqhPzFMKbwzHLZ5tFc",          // Indicates btc address
+      "ipfs": "QmQhCuJqSk9fF58wU58oiaJ1qbZwQ1eQ8mVzNWe7tgLNiD",  // ipfs
+      "email": "some@email1.com",  // Indicates email address
+      "notice": "00302notice",     // Indicates notice address
+      "twitter": "https://twitter.com/zou326865641",   // Indicates twitter address
+      "github": "https://github.com/hebochang",        // Indicates github address
+      "url": "https://twitter.com/zou32686564",        // Indicates twitter url
+      "avatar": "0050103avatar",                       // Indicates avatar address
+      "cname": "a.b.c.d.com"                           // Indicates cname address
+    }
+    // All subdomains of the queried domain name, including the complete domain name and the owner's address of each subdomain name
     "subdomains": [
       {
         "name": "zfd2.zzzzzzzzzzzzzzzzzzzzz.dot",
@@ -220,54 +218,52 @@ GET 请求，请求的内容如下：
   }
 }
 ```
-[截图1](https://github.com/ddns-so/docs/blob/main/%E6%88%AA%E5%9B%BE1.png) [截图2](https://github.com/ddns-so/docs/blob/main/%E6%88%AA%E5%9B%BE2.png)
+[screenshot 1](https://github.com/ddns-so/docs/blob/main/%E6%88%AA%E5%9B%BE1.png) [screenshot 2](https://github.com/ddns-so/docs/blob/main/%E6%88%AA%E5%9B%BE2.png)
 
-### 接口2：反向解析（根据 ETH地址 ，获得 ens / pns 域名）
+### Interface 2: Reverse parsing (obtaining the ens/pns domain name according to the ETH address)
 
-形式1：https://api.ddns.do/reverse/address?type=eth
+Form 1：https://api.ddns.do/reverse/address?type=eth
 
-会返回address的所有eth域名
+All eth domain names of address will be returned
 
 - [https://api.ddns.so/reverse/0x2db2145ec2d26a1809cb2cf8785c6da94f992d99?type=eth](https://api.ddns.so/reverse/0x2db2145ec2d26a1809cb2cf8785c6da94f992d99?type=eth)
 
-参数type等于eth, 会显示address“0x2db2145ec2d26a1809cb2cf8785c6da94f992d99”的所有ens域名
+The parameter type is equal to eth, and all ens domain names of address "0x2db2145ec2d26a1809cb2cf8785c6da94f992d99" will be displayed
 
 ```jsx
 {
-  "code": 1,                // 请求成功的标志
-  "message": "success",     // 请求成功的标志
-  // 表示查询的address
+  "result": "success",     // Flag of successful request
+  // Indicates the address of the query
   "address": "0x2db2145ec2d26a1809cb2cf8785c6da94f992d99",
-  // 下面是具体的返回内容，包含该address所拥有的所有的.eth域名
-  "result": [
+  // The following is the specific returned content, including all eth domain names owned by the address
+  "data": [
     "pomeriumfoundation.eth",
     "precede.eth"
   ]
 }
 ```
 
-形式2：https://api.ddns.do/reverse/0xabcd?type=dot
+Form 2：https://api.ddns.do/reverse/0xabcd?type=dot
 
-会返回0xabcd的所有dot域名
+All dot domain names of 0xabcd will be returned
 
 - [https://api.ddns.so/reverse/0x0b23E3588c906C3F723C58Ef4d6baEe7840A977c?type=dot](https://api.ddns.so/reverse/0x0b23E3588c906C3F723C58Ef4d6baEe7840A977c?type=dot)
 
-参数type等于dot, 会显示address ‘0x0b23E3588c906C3F723C58Ef4d6baEe7840A977c’ 的所有dot域名
+The parameter type is equal to dot, and all dot domain names of address' 0x0b23E3588c906C3F723C58Ef4d6baEe7840A977c 'will be displayed
 
 ```jsx
 {
-  "code": 1,               // 请求成功的标志
-  "message": "success",    // 请求成功的标志
-  // 表示查询的address
+  "result": "success",    // Flag of successful request
+  // Indicates the address of the query
   "address": "0x0b23E3588c906C3F723C58Ef4d6baEe7840A977c",
-  // 下面是具体的返回内容，包含该address所拥有的所有的.dot域名
-  "result": [
+  // The following is the specific returned content, including all dot domain names owned by the address
+  "data": [
     "zfd2.zzzzzzzzzzzzzzzzzzzzz.dot",
     "zfd.zzzzzzzzzzzzzzzzzzzzz.dot"
   ]
 }
 ```
-![截图1](https://github.com/ddns-so/docs/blob/main/%E6%88%AA%E5%9B%BE1.png)
-截图1
-![截图2](https://github.com/ddns-so/docs/blob/main/%E6%88%AA%E5%9B%BE2.png)
-截图2
+![screenshot 1](https://github.com/ddns-so/docs/blob/main/%E6%88%AA%E5%9B%BE1.png)
+screenshot 1
+![screenshot 2](https://github.com/ddns-so/docs/blob/main/%E6%88%AA%E5%9B%BE2.png)
+screenshot 2
