@@ -6,25 +6,25 @@
 
 <!-- /TOC -->
 
-## API接口
+# API接口
 
-### 接口1: 某个.eth / .dot 域名的详细信息
+## 接口1: 某个.eth / .dot 域名的详细信息
 
 发起请求：
 
 GET 请求，请求的内容如下：
 
-形式1：[https://api.ddns.so/name/zzzzzzzzzzzzzzzzzzzzz.dot](https://api.ddns.so/name/zzzzzzzzzzzzzzzzzzzzz.dot)
+形式1：https://api.ddns.so/name/zzzzzzzzzzzzzzzzzzzzz.dot
 
-形式2：[https://api.ddns.so/name/zzzzzzzzzzzzzzzzzzzzz.dot?is_show_subdomains=yes](https://api.ddns.so/name/zzzzzzzzzzzzzzzzzzzzz.dot?subdomains=yes)
+形式2：https://api.ddns.so/name/zzzzzzzzzzzzzzzzzzzzz.dot?is_show_subdomains=yes
 
-形式3：[https://api.ddns.so/name/brantly.eth](https://api.ddns.so/name/brantly.eth?is_show_subdomains=yes)
+形式3：https://api.ddns.so/name/brantly.eth
 
-形式4：[https://api.ddns.so/name/brantly.eth?is_show_subdomains=yes](https://api.ddns.so/name/brantly.eth?is_show_subdomains=yes)
+形式4：https://api.ddns.so/name/brantly.eth?is_show_subdomains=yes
 
 返回结果举例：
 
-形式1：[https://api.ddns.so/name/vitalik.eth](https://api.ddns.so/name/vitalik.eth)
+### 形式1：/name/vitalik.eth
 
 形式1返回的内容如下：
 
@@ -32,9 +32,9 @@ GET 请求，请求的内容如下：
 {
   "result": "success",       // 请求成功的标志
   "data": {                 // 下面是具体的返回内容
-    "name": "vitalik.eth",    // 表示查询域名，完整的域名， 包含.eth/.dot
-    "nameHash": "",           // nameHash
-    "labelName": "vitalik",   // labelName，域名的名称，不包含.eth/.dot
+    "name": "vitalik.eth",    // 表示查询域名，完整的域名， 包含.eth
+    "nameHash": "0xee6c4522aab0003e8d14cd40a6af439055fd2577951148c14b6cea9a53475835",           // nameHash
+    "labelName": "vitalik",   // labelName，域名的名称，不包含.eth
 
     // labelhash
     "labelhash": "0xaf2caa1c2ca1d027f1ac823b529d0a67cd144264b2789fa2ea4d63a67c7103cc",
@@ -47,7 +47,6 @@ GET 请求，请求的内容如下：
     "cost": "0",  // 成本
     "expiryDate": "2032-05-04 05:50:24 +0800",  // 表示查询域名的到期时间
     "registrationDate": "2020-02-07 02:23:40 +0800",  // 表示查询域名的注册时间
-    // 下面的records的内容，都来自于截图2
     "records": {
       // contenthash
       "contenthash": "0xe3010170122022fb6413aa794d5eb7a3906655f50f5ac41cbdd7933bc277f7192c9e2177c792",
@@ -55,7 +54,6 @@ GET 请求，请求的内容如下：
       "eth": "0xd8da6bf26964af9d7eed9e03e53415d37aa96045",
       "dot": "",    // 表示Polkadot地址
       "btc": "",    // 表示btc地址
-      // 下面的text的这些内容，都来自于截图1
       "text": [
         "url",      // 表示Twitter的URL
         "avatar"    // 表示头像的URL
@@ -65,14 +63,8 @@ GET 请求，请求的内容如下：
   }
 }
 ```
-![截图1](./截图1.png)
-截图1
-![截图2](./截图2.png)
-截图2
 
-形式2：[https://api.ddns.so/name/brantly.eth?is_show_subdomains=yes](https://api.ddns.so/name/brantly.eth?is_show_subdomains=yes)
-
-（多返回了subdomains的内容）
+### 形式2：/name/brantly.eth?is_show_subdomains=yes
 
 （在形式1的基础上，增加参数is_show_subdomains, 如果等于yes，就会显示该域名的subdomains的详细内容，得到这样的结果）
 
@@ -80,9 +72,9 @@ GET 请求，请求的内容如下：
 {
   "result": "success",       // 请求成功的标志
   "data": {                 // 下面是具体的返回内容
-    "name": "vitalik.eth",    // 表示查询域名，完整的域名， 包含.eth/.dot
-    "nameHash": "",           // nameHash
-    "labelName": "vitalik",   // labelName，域名的名称，不包含.eth/.dot
+    "name": "vitalik.eth",    // 表示查询域名，完整的域名， 包含.eth
+    "nameHash": "0xee6c4522aab0003e8d14cd40a6af439055fd2577951148c14b6cea9a53475835",           // nameHash
+    "labelName": "vitalik",   // labelName，域名的名称，不包含.eth
 
     // labelhash
     "labelhash": "0xaf2caa1c2ca1d027f1ac823b529d0a67cd144264b2789fa2ea4d63a67c7103cc",
@@ -95,7 +87,6 @@ GET 请求，请求的内容如下：
     "cost": "0",  // 成本
     "expiryDate": "2032-05-04 05:50:24 +0800",  // 表示查询域名的到期时间
     "registrationDate": "2020-02-07 02:23:40 +0800",  // 表示查询域名的注册时间
-    // 下面的records的内容，都来自于截图2
     "records": {
       // contenthash
       "contenthash": "0xe3010170122022fb6413aa794d5eb7a3906655f50f5ac41cbdd7933bc277f7192c9e2177c792",
@@ -103,7 +94,6 @@ GET 请求，请求的内容如下：
       "eth": "0xd8da6bf26964af9d7eed9e03e53415d37aa96045",
       "dot": "",    // 表示Polkadot地址
       "btc": "",    // 表示btc地址
-      // 下面的text的这些内容，都来自于截图1
       "text": [
         "url",      // 表示Twitter的URL
         "avatar"    // 表示头像的URL
@@ -121,12 +111,8 @@ GET 请求，请求的内容如下：
   }
 }
 ```
-![截图1](./截图1.png)
-截图1
-![截图2](./截图2.png)
-截图2
 
-形式3：[https://api.ddns.so/name/zzzzzzzzzzzzzzzzzzzzz.dot](https://api.ddns.so/name/zzzzzzzzzzzzzzzzzzzzz.dot)
+形式3：/name/zzzzzzzzzzzzzzzzzzzzz.dot
 
 形式3返回的内容如下：
 
@@ -134,7 +120,7 @@ GET 请求，请求的内容如下：
 {
   "result": "success",     // 请求成功的标志
   "data": {               // 下面是具体的返回内容
-    "name": "zzzzzzzzzzzzzzzzzzzzz.dot",   // 表示查询域名，完整的域名，包含.eth/.dot
+    "name": "zzzzzzzzzzzzzzzzzzzzz.dot",   // 表示查询域名，完整的域名，包含.dot
     "namehash": "0xe07a052cca727930eaed3b1f7551eaf3a9f2aa71122ad910db6776dd1aeb4681",         // nameHash
     "labelName": "zzzzzzzzzzzzzzzzzzzzz",  // labelName
     // labelhash
@@ -150,7 +136,7 @@ GET 请求，请求的内容如下：
     // 表示查询域名的子域名数量
     "subdomainCount": 12,
 
-    // 下面的这些内容，都来自于截图2
+    // 下面的这些内容，都来自于image-dot.png
     "records": {
       "DOT": "168EsqUaRF6teT9enPx9X6dbHR7JbWN5hDeNAKtHGUPh4RCy", // 表示Polkadot地址
       "ETH": "0x0b23E3588c906C3F723C58Ef4d6baEe7840A977c",  // 表示Eth地址
@@ -167,14 +153,12 @@ GET 请求，请求的内容如下：
   }
 }
 ```
-![截图1](./截图1.png)
-截图1
-![截图2](./截图2.png)
-截图2
 
-形式4：[https://api.ddns.so/name/zzzzzzzzzzzzzzzzzzzzz.dot?is_show_subdomains=yes](https://api.ddns.so/name/zzzzzzzzzzzzzzzzzzzzz.dot?is_show_subdomains=yes)
+<center>如图'image dot. png'所示, DOT域名的后台设置界面</center>
+![image-dot.png](./image-dot.png)
+<center>图image-dot.png1: DOT域名的后台设置界面</center>
 
-（多返回了subdomains的内容）
+形式4：/name/zzzzzzzzzzzzzzzzzzzzz.dot?is_show_subdomains=yes
 
 （在形式3的基础上，增加参数is_show_subdomains, 如果等于yes，就会显示该域名的subdomains的详细内容，得到这样的结果）
 
@@ -196,7 +180,7 @@ GET 请求，请求的内容如下：
     "registrationDate": "2022-06-26 23:47:06 +0800",
     // 表示查询域名的子域名数量
     "subdomainCount": 12,
-    <pre>// 下面的records的内容，都来自于截图2
+    // 下面的records的内容，都来自于image-dot.png
     "records": {
       "DOT": "168EsqUaRF6teT9enPx9X6dbHR7JbWN5hDeNAKtHGUPh4RCy", // 表示Polkadot地址
       "ETH": "0x0b23E3588c906C3F723C58Ef4d6baEe7840A977c",  // 表示Eth地址
@@ -224,8 +208,7 @@ GET 请求，请求的内容如下：
   }
 }
 ```
-![截图1](./截图1.png)
-截图1
-![截图2](./截图2.png)
-截图2
 
+<center>如图'image dot. png'所示, DOT域名的后台设置界面</center>
+![image-dot.png](./image-dot.png)
+<center>图image-dot.png1: DOT域名的后台设置界面</center>

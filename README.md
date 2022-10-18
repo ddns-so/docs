@@ -3,30 +3,31 @@
 
 [中文版接口说明(Interface description in Chinese)](https://github.com/ddns-so/docs/blob/main/README-CHINESE.md)
 
-- [API Overview](https://github.com/ddns-so/docs#api接口)
+- [API](https://github.com/ddns-so/docs#api接口)
 	- [API Overview1：Some The details of the eth/. dot domain name](https://github.com/ddns-so/docs#api-overview1-some-the-details-of-the-ethdot-domain-name)
 
 <!-- /TOC -->
 
-## API Overview
+# API
 
-### API Overview1: Some The details of the eth/dot domain name
+## API 1: Some The details of the eth/dot domain name
 
 Initiate request:
 
 GET request, the content of the request is as follows:
 
-Form 1：[https://api.ddns.so/name/zzzzzzzzzzzzzzzzzzzzz.dot](https://api.ddns.so/name/zzzzzzzzzzzzzzzzzzzzz.dot)
+Form 1：/name/vitalik.eth
 
-Form 2：[https://api.ddns.so/name/zzzzzzzzzzzzzzzzzzzzz.dot?is_show_subdomains=yes](https://api.ddns.so/name/zzzzzzzzzzzzzzzzzzzzz.dot?subdomains=yes)
+Form 2：/name/vitalik.eth?is_show_subdomains=yes
 
-Form 3：[https://api.ddns.so/name/brantly.eth](https://api.ddns.so/name/brantly.eth?is_show_subdomains=yes)
+Form 3：/name/zzzzzzzzzzzzzzzzzzzzz.dot
 
-Form 4：[https://api.ddns.so/name/brantly.eth?is_show_subdomains=yes](https://api.ddns.so/name/brantly.eth?is_show_subdomains=yes)
+Form 4：/name/zzzzzzzzzzzzzzzzzzzzz.dot?is_show_subdomains=yes
+
 
 Example of returned results:
 
-Form 1：[https://api.ddns.so/name/vitalik.eth](https://api.ddns.so/name/vitalik.eth)
+### Form 1：/name/vitalik.eth
 
 Form 1 returns the following contents:
 
@@ -34,9 +35,9 @@ Form 1 returns the following contents:
 {
   "result": "success",       // Flag of successful request
   "data": {                 // The following is the specific returned content
-    "name": "vitalik.eth",    // Indicates the query domain name, including. eth/. dot
+    "name": "vitalik.eth",    // Indicates the query domain name, including .eth
     "nameHash": "0xee6c4522aab0003e8d14cd40a6af439055fd2577951148c14b6cea9a53475835",           // nameHash
-    "labelName": "vitalik",   // labelName，the name of the domain name, excluding. eth/. dot
+    "labelName": "vitalik",   // labelName，the name of the domain name, excluding .eth
 
     // labelhash
     "labelhash": "0xaf2caa1c2ca1d027f1ac823b529d0a67cd144264b2789fa2ea4d63a67c7103cc",
@@ -49,7 +50,6 @@ Form 1 returns the following contents:
     "cost": "0",  // cost
     "expiryDate": "2032-05-04 05:50:24 +0800",  // Indicates the expiration time of the query domain name
     "registrationDate": "2020-02-07 02:23:40 +0800",  // Indicates the registration time of the query domain name
-    // The following records are all from screenshot 2
     "records": {
       // contenthash
       "contenthash": "0xe3010170122022fb6413aa794d5eb7a3906655f50f5ac41cbdd7933bc277f7192c9e2177c792",
@@ -57,7 +57,6 @@ Form 1 returns the following contents:
       "eth": "0xd8da6bf26964af9d7eed9e03e53415d37aa96045",
       "dot": "",    // Indicates Polkadot address
       "btc": "",    // Indicates the btc address
-      // These contents of the following text are from the screenshot 1
       "text": [
         "url",      // URL representing Twitter
         "avatar"    // The URL representing the avatar
@@ -67,14 +66,8 @@ Form 1 returns the following contents:
   }
 }
 ```
-![screenshot 1](./截图1.png)
-screenshot 1
-![screenshot 2](./截图2.png)
-screenshot 2
 
-Form 2：[https://api.ddns.so/name/brantly.eth?is_show_subdomains=yes](https://api.ddns.so/name/brantly.eth?is_show_subdomains=yes)
-
-(More subdomains are returned)
+### Form 2：/name/vitalik.eth?is_show_subdomains=yes
 
 (On the basis of Form 1, add the parameter is_ show_ Subdomains. If it is equal to yes, the details of the subdomains of the domain name will be displayed. The result is as follows)
 
@@ -82,9 +75,9 @@ Form 2：[https://api.ddns.so/name/brantly.eth?is_show_subdomains=yes](https://a
 {
   "result": "success",       // Flag of successful request
   "data": {                 // The following is the specific returned content
-    "name": "vitalik.eth",    // Indicates the query domain name, including. eth/. dot
+    "name": "vitalik.eth",    // Indicates the query domain name, including .eth
     "nameHash": "0xee6c4522aab0003e8d14cd40a6af439055fd2577951148c14b6cea9a53475835",           // nameHash
-    "labelName": "vitalik",   // labelName，the name of the domain name, excluding. eth/. dot
+    "labelName": "vitalik",   // labelName，the name of the domain name, excluding .eth
 
     // labelhash
     "labelhash": "0xaf2caa1c2ca1d027f1ac823b529d0a67cd144264b2789fa2ea4d63a67c7103cc",
@@ -97,7 +90,6 @@ Form 2：[https://api.ddns.so/name/brantly.eth?is_show_subdomains=yes](https://a
     "cost": "0",  // cost
     "expiryDate": "2032-05-04 05:50:24 +0800",  // Indicates the expiration time of the query domain name
     "registrationDate": "2020-02-07 02:23:40 +0800",  // Indicates the registration time of the query domain name
-    // The following records are all from screenshot 2
     "records": {
       // contenthash
       "contenthash": "0xe3010170122022fb6413aa794d5eb7a3906655f50f5ac41cbdd7933bc277f7192c9e2177c792",
@@ -105,7 +97,6 @@ Form 2：[https://api.ddns.so/name/brantly.eth?is_show_subdomains=yes](https://a
       "eth": "0xd8da6bf26964af9d7eed9e03e53415d37aa96045",
       "dot": "",    // Indicates Polkadot address
       "btc": "",    // Indicates the btc address
-      // These contents of the following text are from the screenshot 1
       "text": [
         "url",      // URL representing Twitter
         "avatar"    // The URL representing the avatar
@@ -123,12 +114,8 @@ Form 2：[https://api.ddns.so/name/brantly.eth?is_show_subdomains=yes](https://a
   }
 }
 ```
-![screenshot 1](./截图1.png)
-screenshot 1
-![screenshot 2](./截图2.png)
-screenshot 2
 
-Form 3：[https://api.ddns.so/name/zzzzzzzzzzzzzzzzzzzzz.dot](https://api.ddns.so/name/zzzzzzzzzzzzzzzzzzzzz.dot)
+### Form 3：/name/zzzzzzzzzzzzzzzzzzzzz.dot
 
 Form 3 returns the following contents:
 
@@ -136,7 +123,7 @@ Form 3 returns the following contents:
 {
   "result": "success",     // Flag of successful request
   "data": {               // The following is the specific returned content
-    "name": "zzzzzzzzzzzzzzzzzzzzz.dot",   // Indicates the query domain name, including .eth/.dot
+    "name": "zzzzzzzzzzzzzzzzzzzzz.dot",   // Indicates the query domain name, including .dot
     "namehash": "0xe07a052cca727930eaed3b1f7551eaf3a9f2aa71122ad910db6776dd1aeb4681",         // nameHash
     "labelName": "zzzzzzzzzzzzzzzzzzzzz",  // labelName
     // labelhash
@@ -152,7 +139,7 @@ Form 3 returns the following contents:
     // Indicates the number of subdomains of the query domain name
     "subdomainCount": 12,
 
-    // The following contents are all from screenshot 2
+    // The following contents are all from image-dot.png
     "records": {
       "dot": "168EsqUaRF6teT9enPx9X6dbHR7JbWN5hDeNAKtHGUPh4RCy", // Indicates polkadot address
       "eth": "0x0b23E3588c906C3F723C58Ef4d6baEe7840A977c",  // Indicates eth address
@@ -169,14 +156,11 @@ Form 3 returns the following contents:
   }
 }
 ```
-![screenshot 1](./截图1.png)
-screenshot 1
-![screenshot 2](./截图2.png)
-screenshot 2
+As shown in the figure 'image-dot.png', the setting interface of the DOT background
+![image-dot.png](./image-dot.png)
+<center>image-dot.png: Background setting interface of dot domain name</center>
 
-Form 4：[https://api.ddns.so/name/zzzzzzzzzzzzzzzzzzzzz.dot?is_show_subdomains=yes](https://api.ddns.so/name/zzzzzzzzzzzzzzzzzzzzz.dot?is_show_subdomains=yes)
-
-(More subdomains are returned)
+### Form 4：[/name/zzzzzzzzzzzzzzzzzzzzz.dot?is_show_subdomains=yes](/name/zzzzzzzzzzzzzzzzzzzzz.dot?is_show_subdomains=yes)
 
 (On the basis of Form 3, add the parameter is_show_subdomains. If it is equal to yes, the details of the subdomains of the domain name will be displayed to get this result.)
 
@@ -184,7 +168,7 @@ Form 4：[https://api.ddns.so/name/zzzzzzzzzzzzzzzzzzzzz.dot?is_show_subdomains=
 {
   "result": "success",     // Flag of successful request
   "data": {               // The following is the specific returned content
-    "name": "zzzzzzzzzzzzzzzzzzzzz.dot",   // Indicates the query domain name, including .eth/.dot
+    "name": "zzzzzzzzzzzzzzzzzzzzz.dot",   // Indicates the query domain name, including .dot
     "namehash": "0xe07a052cca727930eaed3b1f7551eaf3a9f2aa71122ad910db6776dd1aeb4681",         // nameHash
     "labelName": "zzzzzzzzzzzzzzzzzzzzz",  // labelName
     // labelhash
@@ -200,7 +184,7 @@ Form 4：[https://api.ddns.so/name/zzzzzzzzzzzzzzzzzzzzz.dot?is_show_subdomains=
     // Indicates the number of subdomains of the query domain name
     "subdomainCount": 12,
 
-    // The following contents are all from screenshot 2
+    // The following contents are all from image-dot.png
     "records": {
       "dot": "168EsqUaRF6teT9enPx9X6dbHR7JbWN5hDeNAKtHGUPh4RCy", // Indicates polkadot address
       "eth": "0x0b23E3588c906C3F723C58Ef4d6baEe7840A977c",  // Indicates eth address
@@ -228,7 +212,7 @@ Form 4：[https://api.ddns.so/name/zzzzzzzzzzzzzzzzzzzzz.dot?is_show_subdomains=
   }
 }
 ```
-![screenshot 1](./截图1.png)
-screenshot 1
-![screenshot 2](./截图2.png)
-screenshot 2
+
+As shown in the figure 'image dot. png', the setting interface of the DOT background
+![image-dot.png](./image-dot.png)
+<center>image-dot.png: the setting interface of the DOT background</center>
