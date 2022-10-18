@@ -154,9 +154,9 @@ GET 请求，请求的内容如下：
 }
 ```
 
-如图'image dot. png'所示, DOT域名的后台设置界面
+如图1所示, DOT域名的后台设置界面
 <p align="center"><img src="image-dot.png" /></p>
-<div><p align="center">图'image-dot.png': the setting interface of the DOT background</p></div>
+<p align="center">图1: the setting interface of the DOT background</p>
 
 形式4：/name/zzzzzzzzzzzzzzzzzzzzz.dot?is_show_subdomains=yes
 
@@ -209,6 +209,6 @@ GET 请求，请求的内容如下：
 }
 ```
 
-<center>如图'image dot. png'所示, DOT域名的后台设置界面</center>
+<center>如图1所示, DOT域名的后台设置界面</center>
 <p align="center"><img src="image-dot.png" /></p>
-<p align="center">图'image-dot.png': the setting interface of the DOT background</p>
+<p align="center">图1: the setting interface of the DOT background</p>
