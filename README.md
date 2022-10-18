@@ -1,9 +1,11 @@
 <img src="https://camo.githubusercontent.com/9e5a57075a5bb3bab4d34b1c3eed3009973bc15ddb6f168c7fbf475d8f0e967f/68747470733a2f2f64617964617975703636362e6574682e64646e732e736f2f697066732f516d586d64535152506d684d666870487a6831585a356955617236447951723844624a753734384b75756f727475" width="78" height="78" />
 <!-- TOC depthFrom:1 depthTo:6 withLinks:1 orderedList:0 -->
 
+[中文版接口说明(Interface description in Chinese)](https://github.com/ddns-so/docs/blob/main/README-CHINESE.md)
+
 - [API Overview](https://github.com/ddns-so/docs#api接口)
-	- [API Overview1：Some The details of the eth/. dot domain name](https://github.com/ddns-so/docs#%E6%8E%A5%E5%8F%A31-%E6%9F%90%E4%B8%AAeth--dot-%E5%9F%9F%E5%90%8D%E7%9A%84%E8%AF%A6%E7%BB%86%E4%BF%A1%E6%81%AF)
-	- [API Overview2：Reverse resolution (obtain the ens/pns domain name according to the ETH address)](https://github.com/ddns-so/docs#%E6%8E%A5%E5%8F%A32%E5%8F%8D%E5%90%91%E8%A7%A3%E6%9E%90%E6%A0%B9%E6%8D%AE-eth%E5%9C%B0%E5%9D%80-%E8%8E%B7%E5%BE%97-ens--pns-%E5%9F%9F%E5%90%8D)
+	- [API Overview1：Some The details of the eth/. dot domain name](https://github.com/ddns-so/docs#api-overview1-some-the-details-of-the-ethdot-domain-name)
+	- [API Overview2：Reverse resolution (obtain the ens/pns domain name according to the ETH address)](https://github.com/ddns-so/docs#interface-2-reverse-parsing-obtaining-the-enspns-domain-name-according-to-the-eth-address)
 
 <!-- /TOC -->
 
