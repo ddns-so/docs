@@ -47,6 +47,7 @@ GET 请求，请求的内容如下：
     "cost": "0",  // 成本
     "expiryDate": "2032-05-04 05:50:24 +0800",  // 表示查询域名的到期时间
     "registrationDate": "2020-02-07 02:23:40 +0800",  // 表示查询域名的注册时间
+    // 下面的这些内容，都来自于图1
     "records": {
       // contenthash
       "contenthash": "0xe3010170122022fb6413aa794d5eb7a3906655f50f5ac41cbdd7933bc277f7192c9e2177c792",
@@ -65,7 +66,7 @@ GET 请求，请求的内容如下：
 ```
 
 <center>如图1所示, ETH域名的后台设置界面</center>
-<p align="center"><img src="image-dot.png" /></p>
+<p align="center"><img src="image-eth.png" /></p>
 <p align="center">图1: ETH域名的后台设置界面</p>
 
 ### 形式2：/name/vitalik.eth?is_show_subdomains=yes
@@ -91,6 +92,7 @@ GET 请求，请求的内容如下：
     "cost": "0",  // 成本
     "expiryDate": "2032-05-04 05:50:24 +0800",  // 表示查询域名的到期时间
     "registrationDate": "2020-02-07 02:23:40 +0800",  // 表示查询域名的注册时间
+    // 下面的这些内容，都来自于图1
     "records": {
       // contenthash
       "contenthash": "0xe3010170122022fb6413aa794d5eb7a3906655f50f5ac41cbdd7933bc277f7192c9e2177c792",
@@ -117,7 +119,7 @@ GET 请求，请求的内容如下：
 ```
 
 <center>如图1所示, ETH域名的后台设置界面</center>
-<p align="center"><img src="image-dot.png" /></p>
+<p align="center"><img src="image-eth.png" /></p>
 <p align="center">图1: ETH域名的后台设置界面</p>
 
 形式3：/name/zzzzzzzzzzzzzzzzzzzzz.dot
@@ -144,7 +146,7 @@ GET 请求，请求的内容如下：
     // 表示查询域名的子域名数量
     "subdomainCount": 12,
 
-    // 下面的这些内容，都来自于image-dot.png
+    // 下面的这些内容，都来自于图2
     "records": {
       "DOT": "168EsqUaRF6teT9enPx9X6dbHR7JbWN5hDeNAKtHGUPh4RCy", // 表示Polkadot地址
       "ETH": "0x0b23E3588c906C3F723C58Ef4d6baEe7840A977c",  // 表示Eth地址
@@ -188,7 +190,7 @@ GET 请求，请求的内容如下：
     "registrationDate": "2022-06-26 23:47:06 +0800",
     // 表示查询域名的子域名数量
     "subdomainCount": 12,
-    // 下面的records的内容，都来自于image-dot.png
+    // 下面的这些内容，都来自于图2
     "records": {
       "DOT": "168EsqUaRF6teT9enPx9X6dbHR7JbWN5hDeNAKtHGUPh4RCy", // 表示Polkadot地址
       "ETH": "0x0b23E3588c906C3F723C58Ef4d6baEe7840A977c",  // 表示Eth地址
