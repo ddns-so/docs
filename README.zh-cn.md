@@ -224,16 +224,14 @@ GET 请求，请求的内容如下：
 <p align="center"><img src="image-dot.png" /></p>
 <p align="center">图2: DOT域名的后台设置界面</p>
 
-## API 2: 反向解析（根据 ETH地址 ，获得 ens / pns 域名）
-Initiate request:
+## /reverse/<your-eth-address>: 根据 ETH地址 ，获得 ens / pns 域名
+HTTP GET request:
 
-GET request, the content of the request is as follows:
+- Form 1：/reverse/ens/0xa1b2c3d4
 
-Form 1：/reverse/ens/0xa1b2c3d4
+- Form 2：/reverse/pns/0xa1b2c3d4
 
-Form 2：/reverse/pns/0xa1b2c3d4
-
-Example of returned results:
+返回结果示例：
 
 ### 形式 1：/reverse/ens/0xa1b2c3d4
 

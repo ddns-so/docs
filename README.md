@@ -228,14 +228,13 @@ As shown in the figure2, the setting interface of the DOT background
 <p align="center">figure2: the setting interface of the DOT background</p>
 
 
-## API 2: Reverse resolution (obtain the ens/pns domain name according to the ETH address)
-Initiate request:
+## /reverse/<your-eth-address>: Query the ens/pns domain name according to the ETH address
 
-GET request, the content of the request is as follows:
+HTTP GET request:
 
-Form 1：/reverse/ens/0xa1b2c3d4
+- Form 1：/reverse/ens/0xa1b2c3d4
 
-Form 2：/reverse/pns/0xa1b2c3d4
+- Form 2：/reverse/pns/0xa1b2c3d4
 
 Example of returned results:
 
