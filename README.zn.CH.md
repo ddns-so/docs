@@ -3,6 +3,7 @@
 
 - [接口](https://github.com/ddns-so/docs/blob/main/README.zn.CH.md#api%E6%8E%A5%E5%8F%A3)
 	- [接口1：某个.eth .dot域名的详细信息](https://github.com/ddns-so/docs/blob/main/README.zn.CH.md#%E6%8E%A5%E5%8F%A31-%E6%9F%90%E4%B8%AAeth--dot-%E5%9F%9F%E5%90%8D%E7%9A%84%E8%AF%A6%E7%BB%86%E4%BF%A1%E6%81%AF)
+	- [接口2：反向解析（根据 ETH地址 ，获得 ens / pns 域名）](https://github.com/ddns-so/docs/)
 
 <!-- /TOC -->
 
@@ -30,7 +31,7 @@ GET 请求，请求的内容如下：
 
 ```jsx
 {
-  "result": "success",       // 请求成功的标志
+  "result": "ok",       // 请求成功的标志
   "data": {                 // 下面是具体的返回内容
     "name": "vitalik.eth",    // 表示查询域名，完整的域名， 包含.eth
     "nameHash": "0xee6c4522aab0003e8d14cd40a6af439055fd2577951148c14b6cea9a53475835",           // nameHash
@@ -75,7 +76,7 @@ GET 请求，请求的内容如下：
 
 ```jsx
 {
-  "result": "success",       // 请求成功的标志
+  "result": "ok",       // 请求成功的标志
   "data": {                 // 下面是具体的返回内容
     "name": "vitalik.eth",    // 表示查询域名，完整的域名， 包含.eth
     "nameHash": "0xee6c4522aab0003e8d14cd40a6af439055fd2577951148c14b6cea9a53475835",           // nameHash
@@ -128,7 +129,7 @@ GET 请求，请求的内容如下：
 
 ```jsx
 {
-  "result": "success",     // 请求成功的标志
+  "result": "ok",     // 请求成功的标志
   "data": {               // 下面是具体的返回内容
     "name": "zzzzzzzzzzzzzzzzzzzzz.dot",   // 表示查询域名，完整的域名，包含.dot
     "namehash": "0xe07a052cca727930eaed3b1f7551eaf3a9f2aa71122ad910db6776dd1aeb4681",         // nameHash
@@ -174,7 +175,7 @@ GET 请求，请求的内容如下：
 
 ```jsx
 {
-  "result": "success",   // 请求成功的标志
+  "result": "ok",   // 请求成功的标志
   "data": {             // 下面是具体的返回内容
     "name": "zzzzzzzzzzzzzzzzzzzzz.dot",   // 表示查询域名
     "namehash": "0xe07a052cca727930eaed3b1f7551eaf3a9f2aa71122ad910db6776dd1aeb4681",  // namehash
@@ -222,3 +223,38 @@ GET 请求，请求的内容如下：
 <center>如图2所示, DOT域名的后台设置界面</center>
 <p align="center"><img src="image-dot.png" /></p>
 <p align="center">图2: DOT域名的后台设置界面</p>
+
+## API 2: 反向解析（根据 ETH地址 ，获得 ens / pns 域名）
+Initiate request:
+
+GET request, the content of the request is as follows:
+
+Form 1：/reverse/ens/0xa1b2c3d4
+
+Form 2：/reverse/pns/0xa1b2c3d4
+
+Example of returned results:
+
+### 形式 1：/reverse/ens/0xa1b2c3d4
+
+形式1返回的内容如下：
+
+```jsx
+{
+  "result": "ok", // Flag of successful request
+  "address": "0x0b23E3588c906C3F723C58Ef4d6baEe7840A977c", // Indicates the address of the query
+  "data": "daydayup666.eth" //  Indicates the returned result
+}
+```
+
+### 形式 2：/reverse/pns/0xa1b2c3d4
+
+形式2返回的内容如下：
+
+```jsx
+{
+  "result": "ok",       // 请求成功的标志
+  "address": "0x0b23E3588c906C3F723C58Ef4d6baEe7840A977c", // Indicates the address of the query
+  "data": "ttt112.dot" //  Indicates the returned result
+}
+```

@@ -4,7 +4,8 @@
 [中文版接口说明(Interface description in Chinese)](https://github.com/ddns-so/docs/blob/main/README.zn.CH.md)
 
 - [API](https://github.com/ddns-so/docs#api)
-	- [API Overview1：Some The details of the eth/. dot domain name](https://github.com/ddns-so/docs#api-1-some-the-details-of-the-ethdot-domain-name)
+	- [API 1：Some The details of the eth/. dot domain name](https://github.com/ddns-so/docs#api-1-some-the-details-of-the-ethdot-domain-name)
+	- [API 2：Reverse resolution (obtain the ens/pns domain name according to the ETH address)](https://github.com/ddns-so/docs#)
 
 <!-- /TOC -->
 
@@ -33,7 +34,7 @@ Form 1 returns the following contents:
 
 ```jsx
 {
-  "result": "success",       // Flag of successful request
+  "result": "ok",       // Flag of successful request
   "data": {                 // The following is the specific returned content
     "name": "vitalik.eth",    // Indicates the query domain name, including .eth
     "nameHash": "0xee6c4522aab0003e8d14cd40a6af439055fd2577951148c14b6cea9a53475835",           // nameHash
@@ -79,7 +80,7 @@ As shown in the figure1, the setting interface of the ETH background
 
 ```jsx
 {
-  "result": "success",       // Flag of successful request
+  "result": "ok",       // Flag of successful request
   "data": {                 // The following is the specific returned content
     "name": "vitalik.eth",    // Indicates the query domain name, including .eth
     "nameHash": "0xee6c4522aab0003e8d14cd40a6af439055fd2577951148c14b6cea9a53475835",           // nameHash
@@ -132,7 +133,7 @@ Form 3 returns the following contents:
 
 ```jsx
 {
-  "result": "success",     // Flag of successful request
+  "result": "ok",     // Flag of successful request
   "data": {               // The following is the specific returned content
     "name": "zzzzzzzzzzzzzzzzzzzzz.dot",   // Indicates the query domain name, including .dot
     "namehash": "0xe07a052cca727930eaed3b1f7551eaf3a9f2aa71122ad910db6776dd1aeb4681",         // nameHash
@@ -177,7 +178,7 @@ As shown in the figure2, the setting interface of the DOT background
 
 ```jsx
 {
-  "result": "success",     // Flag of successful request
+  "result": "ok",     // Flag of successful request
   "data": {               // The following is the specific returned content
     "name": "zzzzzzzzzzzzzzzzzzzzz.dot",   // Indicates the query domain name, including .dot
     "namehash": "0xe07a052cca727930eaed3b1f7551eaf3a9f2aa71122ad910db6776dd1aeb4681",         // nameHash
@@ -227,3 +228,39 @@ As shown in the figure2, the setting interface of the DOT background
 As shown in the figure2, the setting interface of the DOT background
 <p align="center"><img src="image-dot.png" /></p>
 <p align="center">figure2: the setting interface of the DOT background</p>
+
+
+## API 2: Reverse resolution (obtain the ens/pns domain name according to the ETH address)
+Initiate request:
+
+GET request, the content of the request is as follows:
+
+Form 1：/reverse/ens/0xa1b2c3d4
+
+Form 2：/reverse/pns/0xa1b2c3d4
+
+Example of returned results:
+
+### Form 1：/reverse/ens/0xa1b2c3d4
+
+Form 1 returns the following contents:
+
+```jsx
+{
+  "result": "ok", // Flag of successful request
+  "address": "0x0b23E3588c906C3F723C58Ef4d6baEe7840A977c", // Indicates the address of the query
+  "data": "daydayup666.eth" //  Indicates the returned result
+}
+```
+
+### Form 2：/reverse/pns/0xa1b2c3d4
+
+Form 2 returns the following contents:
+
+```jsx
+{
+  "result": "ok", // Flag of successful request
+  "address": "0x0b23E3588c906C3F723C58Ef4d6baEe7840A977c", // Indicates the address of the query
+  "data": "ttt112.dot" //  Indicates the returned result
+}
+```
