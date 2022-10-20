@@ -15,13 +15,13 @@
 
 HTTP GET request:
 
-- Form 1：/name/vitalik.eth
+- [Form 1：/name/vitalik.eth](https://github.com/ddns-so/docs#form-1namevitaliketh)
 
-- Form 2：/name/vitalik.eth?is_show_subdomains=yes
+- [Form 2：/name/vitalik.eth?is_show_subdomains=yes](https://github.com/ddns-so/docs#form-2namevitalikethis_show_subdomainsyes)
 
-- Form 3：/name/zzzzzzzzzzzzzzzzzzzzz.dot
+- [Form 3：/name/zzzzzzzzzzzzzzzzzzzzz.dot](https://github.com/ddns-so/docs#form-3namezzzzzzzzzzzzzzzzzzzzzdot)
 
-- Form 4：/name/zzzzzzzzzzzzzzzzzzzzz.dot?is_show_subdomains=yes
+- [Form 4：/name/zzzzzzzzzzzzzzzzzzzzz.dot?is_show_subdomains=yes](https://github.com/ddns-so/docs#form-4namezzzzzzzzzzzzzzzzzzzzzdotis_show_subdomainsyes)
 
 
 Example of returned results:
@@ -232,9 +232,9 @@ As shown in the figure2, the setting interface of the DOT background
 
 HTTP GET request:
 
-- Form 1：/reverse/ens/0xa1b2c3d4
+- [Form 1：/reverse/ens/0xa1b2c3d4](https://github.com/ddns-so/docs#form-1reverseens0xa1b2c3d4)
 
-- Form 2：/reverse/pns/0xa1b2c3d4
+- [Form 2：/reverse/pns/0xa1b2c3d4](https://github.com/ddns-so/docs#form-2reversepns0xa1b2c3d4)
 
 Example of returned results:
 

@@ -3,7 +3,7 @@
 
 - [接口](https://github.com/ddns-so/docs/blob/main/README.zn.CH.md#api%E6%8E%A5%E5%8F%A3)
 	- [接口1：某个.eth .dot域名的详细信息](https://github.com/ddns-so/docs/blob/main/README.zn.CH.md#%E6%8E%A5%E5%8F%A31-%E6%9F%90%E4%B8%AAeth--dot-%E5%9F%9F%E5%90%8D%E7%9A%84%E8%AF%A6%E7%BB%86%E4%BF%A1%E6%81%AF)
-	- [接口2：反向解析（根据 ETH地址 ，获得 ens / pns 域名）](https://github.com/ddns-so/docs#reverse-query-the-enspns-domain-name-according-to-the-eth-address)
+	- [接口2：反向解析（根据 ETH地址 ，获得 ens / pns 域名）](https://github.com/ddns-so/docs/blob/main/README.zh-cn.md#reverse%E4%BD%A0%E7%9A%84eht%E5%9C%B0%E5%9D%80-%E6%A0%B9%E6%8D%AE-eth%E5%9C%B0%E5%9D%80-%E8%8E%B7%E5%BE%97-ens--pns-%E5%9F%9F%E5%90%8D)
 
 <!-- /TOC -->
 
@@ -15,13 +15,13 @@
 
 请求的内容如下：
 
-- 形式1：/name/vitalik.eth
+- [形式1：/name/vitalik.eth](https://github.com/ddns-so/docs/blob/main/README.zh-cn.md#%E5%BD%A2%E5%BC%8F1namevitaliketh)
 
-- 形式2：/name/vitalik.eth?is_show_subdomains=yes
+- [形式2：/name/vitalik.eth?is_show_subdomains=yes](https://github.com/ddns-so/docs/blob/main/README.zh-cn.md#%E5%BD%A2%E5%BC%8F2namevitalikethis_show_subdomainsyes)
 
-- 形式3：/name/zzzzzzzzzzzzzzzzzzzzz.dot
+- [形式3：/name/zzzzzzzzzzzzzzzzzzzzz.dot](https://github.com/ddns-so/docs/blob/main/README.zh-cn.md#%E5%BD%A2%E5%BC%8F3namezzzzzzzzzzzzzzzzzzzzzdot)
 
-- 形式4：/name/zzzzzzzzzzzzzzzzzzzzz.dot?is_show_subdomains=yes
+- [形式4：/name/zzzzzzzzzzzzzzzzzzzzz.dot?is_show_subdomains=yes](https://github.com/ddns-so/docs/blob/main/README.zh-cn.md#%E5%BD%A2%E5%BC%8F4namezzzzzzzzzzzzzzzzzzzzzdotis_show_subdomainsyes)
 
 返回结果举例：
 
@@ -228,9 +228,9 @@
 
 HTTP GET request:
 
-- 形式1：/reverse/ens/0xa1b2c3d4
+- [形式1：/reverse/ens/0xa1b2c3d4](https://github.com/ddns-so/docs/blob/main/README.zh-cn.md#%E5%BD%A2%E5%BC%8F-1reverseens0xa1b2c3d4)
 
-- 形式2：/reverse/pns/0xa1b2c3d4
+- [形式2：/reverse/pns/0xa1b2c3d4](https://github.com/ddns-so/docs/blob/main/README.zh-cn.md#%E5%BD%A2%E5%BC%8F-2reversepns0xa1b2c3d4)
 
 返回结果示例：
 
