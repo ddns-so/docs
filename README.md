@@ -1,7 +1,7 @@
 <img src="https://camo.githubusercontent.com/9e5a57075a5bb3bab4d34b1c3eed3009973bc15ddb6f168c7fbf475d8f0e967f/68747470733a2f2f64617964617975703636362e6574682e64646e732e736f2f697066732f516d586d64535152506d684d666870487a6831585a356955617236447951723844624a753734384b75756f727475" width="78" height="78" />
 <!-- TOC depthFrom:1 depthTo:6 withLinks:1 orderedList:0 -->
 
-[中文版接口说明(Interface description in Chinese)](https://github.com/ddns-so/docs/blob/main/README.zn.CH.md)
+[中文版接口说明(Interface description in Chinese)](https://github.com/ddns-so/docs/blob/main/README.zh-cn.md)
 
 - [API](https://github.com/ddns-so/docs#api)
 	- [API 1：Some The details of the eth/. dot domain name](https://github.com/ddns-so/docs#api-1-some-the-details-of-the-ethdot-domain-name)
@@ -11,19 +11,17 @@
 
 # API
 
-## API 1: Some The details of the eth/dot domain name
+## /name/<your-domain-name>: Query details of an eth/dot domain name
 
-Initiate request:
+HTTP GET request:
 
-GET request, the content of the request is as follows:
+- Form 1：/name/vitalik.eth
 
-Form 1：/name/vitalik.eth
+- Form 2：/name/vitalik.eth?is_show_subdomains=yes
 
-Form 2：/name/vitalik.eth?is_show_subdomains=yes
+- Form 3：/name/zzzzzzzzzzzzzzzzzzzzz.dot
 
-Form 3：/name/zzzzzzzzzzzzzzzzzzzzz.dot
-
-Form 4：/name/zzzzzzzzzzzzzzzzzzzzz.dot?is_show_subdomains=yes
+- Form 4：/name/zzzzzzzzzzzzzzzzzzzzz.dot?is_show_subdomains=yes
 
 
 Example of returned results:
@@ -71,7 +69,7 @@ Form 1 returns the following contents:
 ```
 
 As shown in the figure1, the setting interface of the ETH background
-<p align="center"><img src="image-eth.png" /></p>
+![](./image-eth.png)
 <p align="center">figure1: the setting interface of the ETHbackground</p>
 
 ### Form 2：/name/vitalik.eth?is_show_subdomains=yes
