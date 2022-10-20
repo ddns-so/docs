@@ -3,25 +3,25 @@
 
 - [接口](https://github.com/ddns-so/docs/blob/main/README.zn.CH.md#api%E6%8E%A5%E5%8F%A3)
 	- [接口1：某个.eth .dot域名的详细信息](https://github.com/ddns-so/docs/blob/main/README.zn.CH.md#%E6%8E%A5%E5%8F%A31-%E6%9F%90%E4%B8%AAeth--dot-%E5%9F%9F%E5%90%8D%E7%9A%84%E8%AF%A6%E7%BB%86%E4%BF%A1%E6%81%AF)
-	- [接口2：反向解析（根据 ETH地址 ，获得 ens / pns 域名）](https://github.com/ddns-so/docs/)
+	- [接口2：反向解析（根据 ETH地址 ，获得 ens / pns 域名）](https://github.com/ddns-so/docs#reverse-query-the-enspns-domain-name-according-to-the-eth-address)
 
 <!-- /TOC -->
 
 # API接口
 
-## 接口1: 某个.eth / .dot 域名的详细信息
+## /name/:<你的域名>: 查询某个.eth / .dot 域名的详细信息
 
-发起请求：
+发起HTTP GET请求：
 
-GET 请求，请求的内容如下：
+请求的内容如下：
 
-形式1：/name/vitalik.eth
+- 形式1：/name/vitalik.eth
 
-形式2：/name/vitalik.eth?is_show_subdomains=yes
+- 形式2：/name/vitalik.eth?is_show_subdomains=yes
 
-形式3：/name/zzzzzzzzzzzzzzzzzzzzz.dot
+- 形式3：/name/zzzzzzzzzzzzzzzzzzzzz.dot
 
-形式4：/name/zzzzzzzzzzzzzzzzzzzzz.dot?is_show_subdomains=yes
+- 形式4：/name/zzzzzzzzzzzzzzzzzzzzz.dot?is_show_subdomains=yes
 
 返回结果举例：
 
@@ -123,7 +123,7 @@ GET 请求，请求的内容如下：
 <p align="center"><img src="image-eth.png" /></p>
 <p align="center">图1: ETH域名的后台设置界面</p>
 
-形式3：/name/zzzzzzzzzzzzzzzzzzzzz.dot
+### 形式3：/name/zzzzzzzzzzzzzzzzzzzzz.dot
 
 形式3返回的内容如下：
 
@@ -169,7 +169,7 @@ GET 请求，请求的内容如下：
 <p align="center"><img src="image-dot.png" /></p>
 <p align="center">图2: DOT域名的后台设置界面</p>
 
-形式4：/name/zzzzzzzzzzzzzzzzzzzzz.dot?is_show_subdomains=yes
+### 形式4：/name/zzzzzzzzzzzzzzzzzzzzz.dot?is_show_subdomains=yes
 
 （在形式3的基础上，增加参数is_show_subdomains, 如果等于yes，就会显示该域名的subdomains的详细内容，得到这样的结果）
 
@@ -224,12 +224,13 @@ GET 请求，请求的内容如下：
 <p align="center"><img src="image-dot.png" /></p>
 <p align="center">图2: DOT域名的后台设置界面</p>
 
-## /reverse/<your-eth-address>: 根据 ETH地址 ，获得 ens / pns 域名
+## /reverse/<你的EHT地址>: 根据 ETH地址 ，获得 ens / pns 域名
+
 HTTP GET request:
 
-- Form 1：/reverse/ens/0xa1b2c3d4
+- 形式1：/reverse/ens/0xa1b2c3d4
 
-- Form 2：/reverse/pns/0xa1b2c3d4
+- 形式2：/reverse/pns/0xa1b2c3d4
 
 返回结果示例：
 
@@ -239,9 +240,9 @@ HTTP GET request:
 
 ```jsx
 {
-  "result": "ok", // Flag of successful request
-  "address": "0x0b23E3588c906C3F723C58Ef4d6baEe7840A977c", // Indicates the address of the query
-  "data": "daydayup666.eth" //  Indicates the returned result
+  "result": "ok",       // 请求成功的标志
+  "address": "0x0b23E3588c906C3F723C58Ef4d6baEe7840A977c", //  表示查询的address
+  "data": "daydayup666.eth" //  表示返回的结果
 }
 ```
 
@@ -252,7 +253,7 @@ HTTP GET request:
 ```jsx
 {
   "result": "ok",       // 请求成功的标志
-  "address": "0x0b23E3588c906C3F723C58Ef4d6baEe7840A977c", // Indicates the address of the query
-  "data": "ttt112.dot" //  Indicates the returned result
+  "address": "0x0b23E3588c906C3F723C58Ef4d6baEe7840A977c", //  表示查询的address
+  "data": "ttt112.dot" //  表示返回的结果
 }
 ```

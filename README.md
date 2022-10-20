@@ -5,7 +5,7 @@
 
 - [API](https://github.com/ddns-so/docs#api)
 	- [API 1：Some The details of the eth/. dot domain name](https://github.com/ddns-so/docs#api-1-some-the-details-of-the-ethdot-domain-name)
-	- [API 2：Reverse resolution (obtain the ens/pns domain name according to the ETH address)](https://github.com/ddns-so/docs#)
+	- [API 2：Reverse resolution (obtain the ens/pns domain name according to the ETH address)](https://github.com/ddns-so/docs#reverse-query-the-enspns-domain-name-according-to-the-eth-address)
 
 <!-- /TOC -->
 
