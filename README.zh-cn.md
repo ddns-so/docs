@@ -7,6 +7,12 @@
 
 <!-- /TOC -->
 
+# 可用的服务器
+
+正式服务器： https://api.ddns.so
+
+测试服务器： https://api.test-ddns.com
+
 # API接口
 
 ## /name/:<你的域名>: 查询某个.eth / .dot 域名的详细信息
@@ -26,6 +32,10 @@
 返回结果举例：
 
 ### 形式1：/name/vitalik.eth
+
+完整命令：
+
+GET `https://api.test-ddns.com/name/vitalik.eth`
 
 形式1返回的内容如下：
 
@@ -71,6 +81,10 @@
 <p align="center">图1: ETH域名的后台设置界面</p>
 
 ### 形式2：/name/vitalik.eth?is_show_subdomains=yes
+
+完整命令：
+
+GET `https://api.test-ddns.com/name/vitalik.eth?is_show_subdomains=yes`
 
 （在形式1的基础上，增加参数is_show_subdomains, 如果等于yes，就会显示该域名的subdomains的详细内容，得到这样的结果）
 
@@ -125,6 +139,10 @@
 
 ### 形式3：/name/zzzzzzzzzzzzzzzzzzzzz.dot
 
+完整命令：
+
+GET `https://api.test-ddns.com/name/zzzzzzzzzzzzzzzzzzzzz.dot`
+
 形式3返回的内容如下：
 
 ```jsx
@@ -170,6 +188,10 @@
 <p align="center">图2: DOT域名的后台设置界面</p>
 
 ### 形式4：/name/zzzzzzzzzzzzzzzzzzzzz.dot?is_show_subdomains=yes
+
+完整命令：
+
+GET `https://api.test-ddns.com/name/zzzzzzzzzzzzzzzzzzzzz.dot?is_show_subdomains=yes`
 
 （在形式3的基础上，增加参数is_show_subdomains, 如果等于yes，就会显示该域名的subdomains的详细内容，得到这样的结果）
 
@@ -224,36 +246,40 @@
 <p align="center"><img src="image-dot.png" /></p>
 <p align="center">图2: DOT域名的后台设置界面</p>
 
-## /reverse/<你的EHT地址>: 根据 ETH地址 ，获得 ens / pns 域名
+## 反向解析：根据ETH地址获得ens/pns域名
 
-HTTP GET request:
+### 1.对ens的反向解析
 
-- [形式1：/reverse/ens/0xa1b2c3d4](https://github.com/ddns-so/docs/blob/main/README.zh-cn.md#%E5%BD%A2%E5%BC%8F-1reverseens0xa1b2c3d4)
+GET `/reverse/ens/<ETH-ADDRESS>`
 
-- [形式2：/reverse/pns/0xa1b2c3d4](https://github.com/ddns-so/docs/blob/main/README.zh-cn.md#%E5%BD%A2%E5%BC%8F-2reversepns0xa1b2c3d4)
+CURL访问例子：
 
-返回结果示例：
+`curl https://api.test-ddns.com/reverse/ens/0x0b23E3588c906C3F723C58Ef4d6baEe7840A977c`
 
-### 形式 1：/reverse/ens/0xa1b2c3d4
-
-形式1返回的内容如下：
+返回的内容如下：
 
 ```jsx
 {
-  "result": "ok",       // 请求成功的标志
-  "address": "0x0b23E3588c906C3F723C58Ef4d6baEe7840A977c", //  表示查询的address
-  "data": "daydayup666.eth" //  表示返回的结果
+  "result": "ok",                                           // 请求成功的标志
+  "address": "0x0b23E3588c906C3F723C58Ef4d6baEe7840A977c",  // 表示查询的address
+  "data": "daydayup666.eth"                                 // 表示返回的结果
 }
 ```
 
-### 形式 2：/reverse/pns/0xa1b2c3d4
+### 2.对pns的反向解析
 
-形式2返回的内容如下：
+GET `/reverse/pns/<ETH-ADDRESS>`
+
+CURL访问例子：
+
+`curl https://api.test-ddns.com/reverse/pns/0x0b23E3588c906C3F723C58Ef4d6baEe7840A977c`
+
+返回的内容如下：
 
 ```jsx
 {
-  "result": "ok",       // 请求成功的标志
-  "address": "0x0b23E3588c906C3F723C58Ef4d6baEe7840A977c", //  表示查询的address
-  "data": "ttt112.dot" //  表示返回的结果
+  "result": "ok",                                           // 请求成功的标志
+  "address": "0x0b23E3588c906C3F723C58Ef4d6baEe7840A977c",  // 表示查询的address
+  "data": "ttt112.dot"                                      // 表示返回的结果
 }
 ```
