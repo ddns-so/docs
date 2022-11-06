@@ -37,7 +37,7 @@ GET: /name/<DOMAIN-NAME>
 
 CURL完整命令：
 
-`curl https://api.test-ddns.com/name/vitalik.eth`
+`curl https://api.test-ddns.com/name/vitalik.eth | jq`
 
 形式1返回的内容如下：
 
@@ -90,7 +90,7 @@ CURL完整命令：
 
 CURL完整命令：
 
-`curl https://api.test-ddns.com/name/vitalik.eth?is_show_subdomains=yes`
+`curl https://api.test-ddns.com/name/vitalik.eth?is_show_subdomains=yes | jq`
 
 
 ```jsx
@@ -148,7 +148,7 @@ CURL完整命令：
 
 CURL完整命令：
 
-`curl https://api.test-ddns.com/name/zzzzzzzzzzzzzzzzzzzzz.dot`
+`curl https://api.test-ddns.com/name/zzzzzzzzzzzzzzzzzzzzz.dot | jq`
 
 返回的内容如下：
 
@@ -200,7 +200,7 @@ CURL完整命令：
 
 CURL完整命令：
 
-`curl https://api.test-ddns.com/name/zzzzzzzzzzzzzzzzzzzzz.dot?is_show_subdomains=yes`
+`curl https://api.test-ddns.com/name/zzzzzzzzzzzzzzzzzzzzz.dot?is_show_subdomains=yes | jq`
 
 返回的内容如下：
 
@@ -265,7 +265,7 @@ GET `/reverse/ens/<ETH-ADDRESS>`
 
 CURL访问例子：
 
-`curl https://api.test-ddns.com/reverse/ens/0x0b23E3588c906C3F723C58Ef4d6baEe7840A977c`
+`curl https://api.test-ddns.com/reverse/ens/0x0b23E3588c906C3F723C58Ef4d6baEe7840A977c | jq`
 
 返回的内容如下：
 
@@ -283,7 +283,7 @@ GET `/reverse/pns/<ETH-ADDRESS>`
 
 CURL访问例子：
 
-`curl https://api.test-ddns.com/reverse/pns/0x0b23E3588c906C3F723C58Ef4d6baEe7840A977c`
+`curl https://api.test-ddns.com/reverse/pns/0x0b23E3588c906C3F723C58Ef4d6baEe7840A977c | jq`
 
 返回的内容如下：
 
