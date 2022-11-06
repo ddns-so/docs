@@ -1,9 +1,9 @@
-<img src="https://camo.githubusercontent.com/9e5a57075a5bb3bab4d34b1c3eed3009973bc15ddb6f168c7fbf475d8f0e967f/68747470733a2f2f64617964617975703636362e6574682e64646e732e736f2f697066732f516d586d64535152506d684d666870487a6831585a356955617236447951723844624a753734384b75756f727475" width="78" height="78" />
 <!-- TOC depthFrom:1 depthTo:6 withLinks:1 orderedList:0 -->
 
-- [接口](https://github.com/ddns-so/docs/blob/main/README.zh-cn.md)
-	- [接口1：某个.eth .dot域名的详细信息](https://github.com/ddns-so/docs/blob/main/README.zh-cn.md#api%E6%8E%A5%E5%8F%A3)
-	- [接口2：反向解析（根据 ETH地址 ，获得 ens / pns 域名）](https://github.com/ddns-so/docs/blob/main/README.zh-cn.md#reverse%E4%BD%A0%E7%9A%84eht%E5%9C%B0%E5%9D%80-%E6%A0%B9%E6%8D%AE-eth%E5%9C%B0%E5%9D%80-%E8%8E%B7%E5%BE%97-ens--pns-%E5%9F%9F%E5%90%8D)
+- [服务器](/#可用的服务器)
+- [接口](/#api接口)
+	- [接口1：某个.eth .dot域名的详细信息](/#api%E6%8E%A5%E5%8F%A3)
+	- [接口2：反向解析](/#反向解析)
 
 <!-- /TOC -->
 
@@ -15,11 +15,11 @@
 
 # API接口
 
-## /name/:<你的域名>: 查询某个.eth / .dot 域名的详细信息
+## 查询某个域名的详细信息
 
-发起HTTP GET请求：
+GET: /name/<DOMAIN-NAME>
 
-请求的内容如下：
+请求的例子如下：
 
 - [形式1：/name/vitalik.eth](https://github.com/ddns-so/docs/blob/main/README.zh-cn.md#%E5%BD%A2%E5%BC%8F1namevitaliketh)
 
@@ -33,9 +33,11 @@
 
 ### 形式1：/name/vitalik.eth
 
-完整命令：
+获得某个ENS的信息
 
-GET `https://api.test-ddns.com/name/vitalik.eth`
+CURL完整命令：
+
+`curl https://api.test-ddns.com/name/vitalik.eth`
 
 形式1返回的内容如下：
 
@@ -82,11 +84,14 @@ GET `https://api.test-ddns.com/name/vitalik.eth`
 
 ### 形式2：/name/vitalik.eth?is_show_subdomains=yes
 
-完整命令：
+在形式1的基础上，增加参数`is_show_subdomains`, 它的值只能为yes
 
-GET `https://api.test-ddns.com/name/vitalik.eth?is_show_subdomains=yes`
+获得某个ENS的信息, 并且包含子域名
 
-（在形式1的基础上，增加参数is_show_subdomains, 如果等于yes，就会显示该域名的subdomains的详细内容，得到这样的结果）
+CURL完整命令：
+
+`curl https://api.test-ddns.com/name/vitalik.eth?is_show_subdomains=yes`
+
 
 ```jsx
 {
@@ -139,11 +144,13 @@ GET `https://api.test-ddns.com/name/vitalik.eth?is_show_subdomains=yes`
 
 ### 形式3：/name/zzzzzzzzzzzzzzzzzzzzz.dot
 
-完整命令：
+获得某个PNS的信息
 
-GET `https://api.test-ddns.com/name/zzzzzzzzzzzzzzzzzzzzz.dot`
+CURL完整命令：
 
-形式3返回的内容如下：
+`curl https://api.test-ddns.com/name/zzzzzzzzzzzzzzzzzzzzz.dot`
+
+返回的内容如下：
 
 ```jsx
 {
@@ -189,11 +196,13 @@ GET `https://api.test-ddns.com/name/zzzzzzzzzzzzzzzzzzzzz.dot`
 
 ### 形式4：/name/zzzzzzzzzzzzzzzzzzzzz.dot?is_show_subdomains=yes
 
-完整命令：
+在形式3的基础上，增加参数`is_show_subdomains`, 该参数的值只能为`yes`.
 
-GET `https://api.test-ddns.com/name/zzzzzzzzzzzzzzzzzzzzz.dot?is_show_subdomains=yes`
+CURL完整命令：
 
-（在形式3的基础上，增加参数is_show_subdomains, 如果等于yes，就会显示该域名的subdomains的详细内容，得到这样的结果）
+`curl https://api.test-ddns.com/name/zzzzzzzzzzzzzzzzzzzzz.dot?is_show_subdomains=yes`
+
+返回的内容如下：
 
 ```jsx
 {
@@ -246,7 +255,9 @@ GET `https://api.test-ddns.com/name/zzzzzzzzzzzzzzzzzzzzz.dot?is_show_subdomains
 <p align="center"><img src="image-dot.png" /></p>
 <p align="center">图2: DOT域名的后台设置界面</p>
 
-## 反向解析：根据ETH地址获得ens/pns域名
+## 反向解析
+
+根据ETH地址获得ens/pns域名
 
 ### 1.对ens的反向解析
 
