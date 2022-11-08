@@ -192,6 +192,7 @@ Every normal response (`200` http code) gets its `result` field, which looks lik
 ```
 
 Here is the response code table:
+
 | result code | explain |
 |-------------|---------|
 | ok          | everything goes well in server |
