@@ -1,10 +1,8 @@
 <!-- TOC depthFrom:1 depthTo:6 withLinks:1 orderedList:0 -->
-
 - [Servers](#servers)
-- [API methods](#api)
-	- [query for ens/pns](#api%E6%8E%A5%E5%8F%A3)
-	- [reverse query](#reverse_query)
-
+- [API methods](#api-methods)
+	- [query for ens/pns](#query-for-enspns)
+	- [reverse parse](#reverse-parse)
 <!-- /TOC -->
 
 # Servers
@@ -23,7 +21,7 @@ URL pattern: `/name/<DOMAIN-NAME>`
 
 | Parameter           | values  | explain  |
 |---------------------|---------|----------|
-| <DOMAIN-NAME>       | string  | a ens or pns name, e.g. "vitalik.eth", "zzzzzzzzzzzzzzzzzzzzz.dot"  |
+| \<DOMAIN-NAME\>       | string  | a ens or pns name, e.g. "vitalik.eth", "zzzzzzzzzzzzzzzzzzzzz.dot"  |
 | is_show_subdomains  | [yes\|no]               | whether list its children domains or not. default is `no` |
 
 
@@ -132,8 +130,8 @@ URL pattern: `/reverse/<TYPE>/<ETH-ADDRESS>`
 
 | Parameter           | values     | explain  |
 |---------------------|------------|----------|
-| <TYPE>              | [ens\|pns] | which type of result you want to get. e.g if you want ENS name, here should be `ens` |
-| <ETH-ADDRESS>       | string     | an ETH address, e.g. `0x0b23E3588c906C3F723C58Ef4d6baEe7840A977c` |
+| \<TYPE\>              | [ens\|pns] | which type of result you want to get. e.g if you want ENS name, here should be `ens` |
+| \<ETH-ADDRESS\>       | string     | an ETH address, e.g. `0x0b23E3588c906C3F723C58Ef4d6baEe7840A977c` |
 
 
 ### Example 1
