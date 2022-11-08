@@ -34,28 +34,28 @@ send request via `curl`:
 
 response data is:
 
-| Parameter           | values  | explain  |
-|---------------------|---------|----------|
-| name | "vitalik.eth" | the name you are querying(a ens or pns name) e.g. "vitalik.eth", "zzzzzzzzzzzzzzzzzzzzz.dot"  |
-| nameHash | "0xee6c4522aab0003e8d14cd40a6af439055fd2577951148c14b6cea9a53475835" | nameHash |
-| labelName | "vitalik.eth" | domain label |
-| labelHash| "0xaf2caa1c2ca1d027f1ac823b529d0a67cd144264b2789fa2ea4d63a67c7103cc" | labelhash |
-| owner | "0xd8da6bf26964af9d7eed9e03e53415d37aa96045" | domain's owner address |
-| parent | "0x93cdeb708b7545dc668eb9280176169d1c33cfd8ed6f04690a0bcc88a93fc4ae" | parent labelhash |
-| subdomainCount | 0 | its sub-domains count |
-| ttl | null | ttl |
-| cost | "0" | cost |
-| expiryDate | "2032-05-04 05:50:24 +0800" | when this domain expires |
-| registrationDate | "2020-02-07 02:23:40 +0800" | when this domain is registered |
-| records | | these records are set via ENS/PNS console by user |
-| contenthash | "0xe3010170122022fb6413aa794d5eb7a3906655f50f5ac41cbdd7933bc277f7192c9e2177c792" | content hash for ipfs |
-| eth | "0xd8da6bf26964af9d7eed9e03e53415d37aa96045" | eth address |
-| dot | null | dot address |
-| btc | null | btc address |
-| btc | null | btc address |
-| text |  | txt address |
-| url | null |  |
-| avatar | null | avatar url |
+| Parameter           | explain |
+|---------------------|---------|
+| name |  the name you are querying e.g. "vitalik.eth", "zzzzzzzzzzzzzzzzzzzzz.dot"
+| nameHash |  nameHash |
+| labelName |  domain label |
+| labelHash | labelhash |
+| owner |  domain's owner address |
+| parent | parent labelhash |
+| subdomainCount | its sub-domains count |
+| ttl | ttl |
+| cost | cost |
+| expiryDate | when this domain expires |
+| registrationDate | when this domain is registered |
+| records | these records are set via ENS/PNS console by user |
+| contenthash | content hash for ipfs |
+| eth | eth address |
+| dot | dot address |
+| btc | btc address |
+| btc | btc address |
+| text | txt address |
+| url |  |
+| avatar  | avatar url |
 
 
 ### Example 2: query for "vitalik.eth" with its children domians
@@ -66,11 +66,11 @@ send request via `curl`:
 
 
 Other contents
-| Its subdomains | values  | explain  |
-|---------------------|---------|----------|
-| id | "0x1bd80197873de285b67cc9dcf3b2bf196ec112b701f34e89dfc4bfc9fb17b0b2" | nameHash |
-| name | "[4da432f1ecd4c0ac028ebde3a3f78510a21d54087b161590a63080d33b702b8d].[68562fc74af4dcfac633a803c2f57c2b826827b47f797b6ab4e468dc8607b5d0].[4f5b812789fc606be1b3b16908db13fc7a9adf7ca72641f84d75b47069d3d7f0]" | domain name |
-| subdomains | [] | subdomains |
+| Its subdomains | explain  |
+|---------------------|---------|
+| id | nameHash |
+| name | domain name |
+| subdomains | subdomains |
 
 ## Reverse Parse
 
@@ -96,10 +96,10 @@ send request with `curl`:
 
 response:
 
-| Parameter | values  | explain  |
+| Parameter | explain  |
 |---------------------|---------|----------|
-| address | "0x0b23E3588c906C3F723C58Ef4d6baEe7840A977c" | the address which is being queried |
-| data | "daydayup666.eth" |reverse parsing result |
+| address |  the address which is being queried |
+| data | reverse parsing result |
 
 ### Example2 for PNS
 
@@ -113,8 +113,8 @@ response:
 
 | Parameter | values  | explain  |
 |---------------------|---------|----------|
-| address | "0x0b23E3588c906C3F723C58Ef4d6baEe7840A977c" | the address which is being queried |
-| data | "ttt112.dot" | reverse parsing result |
+| address | the address which is being queried |
+| data | reverse parsing result |
 
 
 ## response code
