@@ -2,7 +2,12 @@
 - [Servers](#servers)
 - [API methods](#api-methods)
 	- [query for ens/pns](#query-for-enspns)
+    - [example 1 normal query](#example-1-query-for-vitaliketh)
+    - [example 2 query with children domains](#example-2-query-for-vitaliketh-with-its-children-domians)
 	- [reverse parse](#reverse-parse)
+    - [example 1 for ENS](#example-1-for-ens)
+    - [example 2 for PNS](#example-1-for-ens)
+
 <!-- /TOC -->
 
 # Servers
@@ -134,7 +139,7 @@ URL pattern: `/reverse/<TYPE>/<ETH-ADDRESS>`
 | \<ETH-ADDRESS\>       | string     | an ETH address, e.g. `0x0b23E3588c906C3F723C58Ef4d6baEe7840A977c` | required |
 
 
-### Example 1
+### Example 1 for ENS
 
 query for ens:
 
@@ -157,7 +162,7 @@ response:
 }
 ```
 
-### Example2
+### Example2 for PNS
 
 query for pns:
 
