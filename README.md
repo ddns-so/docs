@@ -19,10 +19,10 @@ HTTP method: GET
 
 URL pattern: `/name/<DOMAIN-NAME>`
 
-| Parameter           | values  | explain  |
-|---------------------|---------|----------|
-| \<DOMAIN-NAME\>       | string  | a ens or pns name, e.g. "vitalik.eth", "zzzzzzzzzzzzzzzzzzzzz.dot"  |
-| is_show_subdomains  | [yes\|no]               | whether list its children domains or not. default is `no` |
+| Parameter           | values  | explain  | is required |
+|---------------------|---------|----------|-------------|
+| \<DOMAIN-NAME\>       | string  | a ens or pns name, e.g. "vitalik.eth", "zzzzzzzzzzzzzzzzzzzzz.dot"  | required |
+| is_show_subdomains  | [yes\|no]               | whether list its children domains or not. default is `no` | optional |
 
 
 ### Example 1: query for `vitalik.eth`:
@@ -128,10 +128,10 @@ HTTP method: GET
 
 URL pattern: `/reverse/<TYPE>/<ETH-ADDRESS>`
 
-| Parameter           | values     | explain  |
-|---------------------|------------|----------|
-| \<TYPE\>              | [ens\|pns] | which type of result you want to get. e.g if you want ENS name, here should be `ens` |
-| \<ETH-ADDRESS\>       | string     | an ETH address, e.g. `0x0b23E3588c906C3F723C58Ef4d6baEe7840A977c` |
+| Parameter           | values     | explain  | is required |
+|---------------------|------------|----------|-------------|
+| \<TYPE\>              | [ens\|pns] | which type of result you want to get. e.g if you want ENS name, here should be `ens` | required |
+| \<ETH-ADDRESS\>       | string     | an ETH address, e.g. `0x0b23E3588c906C3F723C58Ef4d6baEe7840A977c` | required |
 
 
 ### Example 1
@@ -179,3 +179,21 @@ response:
   "data": "ttt112.dot"
 }
 `
+
+## response code
+
+Every normal response (`200` http code) gets its `result` field, which looks like:
+
+```
+{
+  "result": "ok",
+  ...
+}
+```
+
+Here is the response code table:
+| result code | explain |
+|-------------|---------|
+| ok          | everything goes well in server |
+| error       | something not good |
+
