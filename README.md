@@ -2,11 +2,7 @@
 - [Servers](#servers)
 - [API methods](#api-methods)
 	- [query for ens/pns](#query-for-enspns)
-    - [example 1 normal query](#example-1-query-for-vitaliketh)
-    - [example 2 query with children domains](#example-2-query-for-vitaliketh-with-its-children-domians)
 	- [reverse parse](#reverse-parse)
-    - [example 1 for ENS](#example-1-for-ens)
-    - [example 2 for PNS](#example-1-for-ens)
 
 <!-- /TOC -->
 
