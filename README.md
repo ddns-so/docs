@@ -178,7 +178,7 @@ response:
   // reverse parsing result
   "data": "ttt112.dot"
 }
-`
+```
 
 ## response code
 
