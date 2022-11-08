@@ -97,9 +97,10 @@ send request with `curl`:
 response:
 
 | Parameter | explain  |
-|---------------------|---------|----------|
-| address |  the address which is being queried |
+|---------------------|---------|
+| address | the address which is being queried |
 | data | reverse parsing result |
+
 
 ### Example2 for PNS
 
