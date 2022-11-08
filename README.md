@@ -50,12 +50,12 @@ response data is:
 | records | | these records are set via ENS/PNS console by user |
 | contenthash | "0xe3010170122022fb6413aa794d5eb7a3906655f50f5ac41cbdd7933bc277f7192c9e2177c792" | content hash for ipfs |
 | eth | "0xd8da6bf26964af9d7eed9e03e53415d37aa96045" | eth address |
-| dot | "" | dot address |
-| btc | "" | btc address |
-| btc | "" | btc address |
+| dot | null | dot address |
+| btc | null | btc address |
+| btc | null | btc address |
 | text |  | txt address |
-| url |  |  |
-| avatar |  | avatar url |
+| url | null |  |
+| avatar | null | avatar url |
 
 
 ### Example 2: query for "vitalik.eth" with its children domians
@@ -105,7 +105,7 @@ response:
 
 query for pns:
 
-send request with `cur`:
+send request with `curl`:
 
 `curl https://api.test-ddns.com/reverse/pns/0x0b23E3588c906C3F723C58Ef4d6baEe7840A977c`
 
