@@ -3,6 +3,7 @@
 - [API methods](#api-methods)
 	- [query for ens/pns](#query-for-enspns)
 	- [reverse parse](#reverse-parse)
+- [response code](#response-code)
 
 <!-- /TOC -->
 
@@ -24,7 +25,7 @@ request:
 
 | Request Parameter   | values  | explain  | is required |
 |---------------------|---------|----------|-------------|
-| \<DOMAIN-NAME\>       | string  | a ens or pns name, e.g. "vitalik.eth", "zzzzzzzzzzzzzzzzzzzzz.dot"  | required |
+| \<DOMAIN-NAME\>       | string  | ens or pns name, e.g. "vitalik.eth", "zzzzzzzzzzzzzzzzzzzzz.dot"  | required |
 | is_show_subdomains  | [yes\|no]               | whether list its children domains or not. default is `no` | optional |
 
 response:
@@ -115,7 +116,7 @@ b16908db13fc7a9adf7ca72641f84d75b47069d3d7f0]",
 
 ## Reverse Parse
 
-this method can reverse parse a ETH-address.
+this method can reverse parse an ETH-address.
 
 HTTP method: GET
 
@@ -181,7 +182,7 @@ response data is:
 ```
 
 
-## response code
+# response code
 
 Every normal response (`200` http code) gets its `result` field, which looks like:
 
