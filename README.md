@@ -20,21 +20,16 @@ HTTP method: GET
 
 URL pattern: `/name/<DOMAIN-NAME>`
 
-| Parameter           | values  | explain  | is required |
+request:
+
+| Request Parameter   | values  | explain  | is required |
 |---------------------|---------|----------|-------------|
 | \<DOMAIN-NAME\>       | string  | a ens or pns name, e.g. "vitalik.eth", "zzzzzzzzzzzzzzzzzzzzz.dot"  | required |
 | is_show_subdomains  | [yes\|no]               | whether list its children domains or not. default is `no` | optional |
 
+response:
 
-### Example 1: query for `vitalik.eth`:
-
-send request via `curl`:
-
-`$ curl https://api.test-ddns.com/name/vitalik.eth`
-
-response data is:
-
-| Parameter           | explain |
+| Response JSON key| explain |
 |---------------------|---------|
 | name |  the name you are querying e.g. "vitalik.eth", "zzzzzzzzzzzzzzzzzzzzz.dot"
 | nameHash |  nameHash |
@@ -57,6 +52,41 @@ response data is:
 | url |  |
 | avatar  | avatar url |
 
+
+### Example 1: query for `vitalik.eth`:
+
+send request via `curl`:
+
+`$ curl https://api.test-ddns.com/name/vitalik.eth`
+
+response data is:
+
+```
+{
+  "result": "ok",
+  "data": {
+    "name": "vitalik.eth",
+    "nameHash": "0xee6c4522aab0003e8d14cd40a6af439055fd2577951148c14b6cea9a53475835",
+    "labelName": "vitalik",
+    "labelHash": "0xaf2caa1c2ca1d027f1ac823b529d0a67cd144264b2789fa2ea4d63a67c7103cc",
+    "owner": "0xd8da6bf26964af9d7eed9e03e53415d37aa96045",
+    "parent": "0x93cdeb708b7545dc668eb9280176169d1c33cfd8ed6f04690a0bcc88a93fc4ae",
+    "subdomainCount": 0,
+    "ttl": null,
+    "cost": "3175364107234786",
+    "expiryDate": "2034-05-04T09:28:48.000+00:00",
+    "registrationDate": "2020-02-06T18:23:40.000+00:00",
+    "records": {
+      "contentHash": "0xe3010170122028dab11ef0c420d1e616f9ecdc59ad00a07049b636a6d94437b9cedce2fad7f2",
+      "eth": "0xd8da6bf26964af9d7eed9e03e53415d37aa96045",
+      "dot": null,
+      "btc": null,
+      "text": null,
+      "pubkey": null
+    }
+  }
+}
+```
 
 ### Example 2: query for "vitalik.eth" with its children domians
 
