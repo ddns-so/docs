@@ -184,7 +184,7 @@ response data is:
 
 ## Query for domain records
 
-query for a domain's record
+query for a domain's A, CNAME, TXT, IPFS record.
 
 HTTP method: GET
 
