@@ -3,7 +3,7 @@
 - [API methods](#api-methods)
 	- [query for ens/pns](#query-for-enspns)
 	- [reverse parse](#reverse-parse)
-  - [query for domain's A, CNAME, TXT, IPFS records](#query-for-records)
+  - [query for domain's A, CNAME, TXT, IPFS records](#query-for-domain-acnametxtipfs-recordsquery-for-records)
 - [response code](#response-code)
 
 <!-- /TOC -->
@@ -200,7 +200,7 @@ response:
 | Response JSON key| explain |
 |---------------------|---------|
 | domain_name | the domain you are querying |
-| ip |  result |
+| value |  result |
 | type | record type |
 
 
@@ -217,7 +217,7 @@ response data is:
   "result": "ok",
   "data": {
     "domain_name": "pns.link",
-    "ip": "76.76.21.61",
+    "value": "76.76.21.61",
     "type": "a"
   }
 }
