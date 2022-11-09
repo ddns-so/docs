@@ -3,7 +3,7 @@
 - [API methods](#api-methods)
 	- [query for ens/pns](#query-for-enspns)
 	- [reverse parse](#reverse-parse)
-  - [query for domain's A, CNAME, TXT, IPFS records](#query-for-domain-acnametxtipfs-recordsquery-for-records)
+  - [query for domain's A, CNAME, TXT, IPFS records](#query-for-domain-records)
 - [response code](#response-code)
 
 <!-- /TOC -->
@@ -182,7 +182,7 @@ response data is:
 }
 ```
 
-## Query for domain A|CNAME|TXT|IPFS records](#query-for-records)
+## Query for domain records
 
 query for a domain's record
 
