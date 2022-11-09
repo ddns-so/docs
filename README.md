@@ -3,6 +3,7 @@
 - [API methods](#api-methods)
 	- [query for ens/pns](#query-for-enspns)
 	- [reverse parse](#reverse-parse)
+  - [query for domain's A, CNAME, TXT, IPFS records](#query-for-records)
 - [response code](#response-code)
 
 <!-- /TOC -->
@@ -181,6 +182,46 @@ response data is:
 }
 ```
 
+## Query for domain A|CNAME|TXT|IPFS records](#query-for-records)
+
+query for a domain's record
+
+HTTP method: GET
+
+URL pattern: `/domain/<DOMAIN-NAME>?type=<TYPE>`
+
+| Request parameter   | values     | explain  | is required |
+|---------------------|------------|----------|-------------|
+| \<DOMAIN-NAME\>     | string     | the domain which record you want to query, e.g. pns.link  | required |
+| \<TYPE\>            | string     | the record type, one of: [a|cname|txt|ipfs]  | optional, default is `a`|
+
+response:
+
+| Response JSON key| explain |
+|---------------------|---------|
+| domain_name | the domain you are querying |
+| ip |  result |
+| type | record type |
+
+
+### Example
+
+send request with `curl`:
+
+`curl https://api.test-ddns.com/domain/pns.link`
+
+response data is:
+
+```jsx
+{
+  "result": "ok",
+  "data": {
+    "domain_name": "pns.link",
+    "ip": "76.76.21.61",
+    "type": "a"
+  }
+}
+```
 
 # response code
 
