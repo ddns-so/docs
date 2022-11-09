@@ -193,7 +193,7 @@ URL pattern: `/domain/<DOMAIN-NAME>?type=<TYPE>`
 | Request parameter   | values     | explain  | is required |
 |---------------------|------------|----------|-------------|
 | \<DOMAIN-NAME\>     | string     | the domain which record you want to query, e.g. pns.link  | required |
-| \<TYPE\>            | string     | the record type, one of: [a|cname|txt|ipfs]  | optional, default is `a`|
+| \<TYPE\>            | string     | the record type: [a\|cname\|txt\|ipfs]  | optional, default is `a`|
 
 response:
 
