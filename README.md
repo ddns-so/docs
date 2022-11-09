@@ -29,28 +29,27 @@ request:
 
 response:
 
-| Response JSON key| explain |
-|---------------------|---------|
-| name |  the name you are querying e.g. "vitalik.eth", "zzzzzzzzzzzzzzzzzzzzz.dot"
-| nameHash |  nameHash |
-| labelName |  domain label |
-| labelHash | labelhash |
-| owner |  domain's owner address |
-| parent | parent labelhash |
-| subdomainCount | its sub-domains count |
-| ttl | ttl |
-| cost | cost |
-| expiryDate | when this domain expires |
-| registrationDate | when this domain is registered |
-| records | these records are set via ENS/PNS console by user |
-| contenthash | content hash for ipfs |
-| eth | eth address |
-| dot | dot address |
-| btc | btc address |
-| btc | btc address |
-| text | txt address |
-| url |  |
-| avatar  | avatar url |
+| Response JSON key            |             explain |
+|---------------------------------|------------------------------|
+| name             |  the name you are querying e.g. "vitalik.eth", "zzzzzzzzzzzzzzzzzzzzz.dot"  |
+| nameHash         |      nameHash                                                               |
+| labelName        |      domain label                                                           |
+| labelHash        |     labelhash                                                               |
+| owner            |      domain's owner address                                                 |
+| parent           |     parent labelhash                                                        |
+| subdomainCount   |     its sub-domains count                                                   |
+| ttl              |     ttl                                                                     |
+| cost             |     cost                                                                    |
+| expiryDate       |     when this domain expires                                                |
+| registrationDate |     when this domain is registered                                          |
+| records          |     these records are set via ENS/PNS console by user                       |
+| contenthash      |     content hash for ipfs                                                   |
+| eth              |     eth address                                                             |
+| dot              |     dot address                                                             |
+| btc              |     btc address                                                             |
+| btc              |     btc address                                                             |
+| text             |     txt address                                                             |
+| avatar           |     avatar url                                                              |
 
 
 ### Example 1: query for `vitalik.eth`:
@@ -94,13 +93,25 @@ send request via `curl`:
 
 `curl https://api.test-ddns.com/name/vitalik.eth?is_show_subdomains=yes `
 
+response data is:
 
-Other contents
-| Its subdomains | explain  |
-|---------------------|---------|
-| id | nameHash |
-| name | domain name |
-| subdomains | subdomains |
+```jsx
+{
+  "result": "ok",
+  "data": {
+    // other contents
+    // its subdomains:
+    "subdomains": [
+      {
+        "id": "0x1bd80197873de285b67cc9dcf3b2bf196ec112b701f34e89dfc4bfc9fb17b0b2",
+        "name": "[4da432f1ecd4c0ac028ebde3a3f78510a21d54087b161590a63080d33b702b8d].[68562fc74af4dcfac633a803c2f57c2b826827b47f797b6ab4e468dc8607b5d0].[4f5b812789fc606be1b3
+b16908db13fc7a9adf7ca72641f84d75b47069d3d7f0]",
+        "subdomains": []
+      }
+    ]
+  }
+}
+```
 
 ## Reverse Parse
 
@@ -110,10 +121,18 @@ HTTP method: GET
 
 URL pattern: `/reverse/<TYPE>/<ETH-ADDRESS>`
 
-| Parameter           | values     | explain  | is required |
+| Request parameter           | values     | explain  | is required |
 |---------------------|------------|----------|-------------|
 | \<TYPE\>              | [ens\|pns] | which type of result you want to get. e.g if you want ENS name, here should be `ens` | required |
 | \<ETH-ADDRESS\>       | string     | an ETH address, e.g. `0x0b23E3588c906C3F723C58Ef4d6baEe7840A977c` | required |
+
+
+response:
+
+| Response JSON key| explain |
+|---------------------|---------|
+| address | the address which is being queried |
+| data    | reverse parsing result             |
 
 
 ### Example 1 for ENS
@@ -124,13 +143,20 @@ send request with `curl`:
 
 `curl https://api.test-ddns.com/reverse/ens/0x0b23E3588c906C3F723C58Ef4d6baEe7840A977c`
 
-response:
+response data is:
 
-| Parameter | explain  |
-|---------------------|---------|
-| address | the address which is being queried |
-| data | reverse parsing result |
+```jsx
+{
+  // successfully got response
+  "result": "ok",
 
+  // the address which is being queried
+  "address": "0x0b23E3588c906C3F723C58Ef4d6baEe7840A977c",
+
+  // reverse parsing result
+  "data": "daydayup666.eth"
+}
+```
 
 ### Example2 for PNS
 
@@ -140,12 +166,19 @@ send request with `curl`:
 
 `curl https://api.test-ddns.com/reverse/pns/0x0b23E3588c906C3F723C58Ef4d6baEe7840A977c`
 
-response:
+response data is:
 
-| Parameter | explain  |
-|---------------------|---------|
-| address | the address which is being queried |
-| data | reverse parsing result |
+```jsx
+{
+  // successfully got response
+  "result": "ok",
+
+  // the address which is being queried
+  "address": "0x0b23E3588c906C3F723C58Ef4d6baEe7840A977c",
+  // reverse parsing result
+  "data": "ttt112.dot"
+}
+```
 
 
 ## response code
