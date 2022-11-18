@@ -1,22 +1,20 @@
 <!-- TOC depthFrom:1 depthTo:6 withLinks:1 orderedList:0 -->
 - [Servers](#servers)
-- [API methods](#api-methods)
-	- [query for ens/pns](#query-for-enspns)
-	- [reverse parse](#reverse-parse)
-  - [query for domain's A, CNAME, TXT, IPFS records](#query-for-domain-records)
+- [API](#api-methods)
+	- [Resolving Names for ENS/PNS](#resolving-names)
+	- [Reverse Resolution](#reverse-resolution)
+  - [Resolving Domain Records](#resolving-domain-records)
 - [response code](#response-code)
 
 <!-- /TOC -->
 
-# Servers
+# Server Endpoint
 
 Production Server： https://api.ddns.so
 
-Test Server： https://api.test-ddns.com
-
 # API Methods
 
-## Query for ENS/PNS
+## Resolving Names for ENS/PNS
 
 HTTP method: GET
 
@@ -26,20 +24,20 @@ request:
 
 | Request Parameter   | values  | explain  | is required |
 |---------------------|---------|----------|-------------|
-| \<DOMAIN-NAME\>       | string  | ens or pns name, e.g. "vitalik.eth", "zzzzzzzzzzzzzzzzzzzzz.dot"  | required |
-| is_show_subdomains  | [yes\|no]               | whether list its children domains or not. default is `no` | optional |
+| \<DOMAIN-NAME\>       | string  | ens or pns name, e.g. "vitalik.eth", "web3player.dot"  | required |
+| subdomains  | [yes\|no]               | whether list its children domains or not. default is `no` | optional |
 
 response:
 
 | Response JSON key            |             explain |
 |---------------------------------|------------------------------|
-| name             |  the name you are querying e.g. "vitalik.eth", "zzzzzzzzzzzzzzzzzzzzz.dot"  |
+| name             |  the name you are querying e.g. "vitalik.eth", "web3player.dot"  |
 | nameHash         |      nameHash                                                               |
 | labelName        |      domain label                                                           |
 | labelHash        |     labelhash                                                               |
 | owner            |      domain's owner address                                                 |
 | parent           |     parent labelhash                                                        |
-| subdomainCount   |     its sub-domains count                                                   |
+| subdomainCount   |     its subdomains count                                                   |
 | ttl              |     ttl                                                                     |
 | cost             |     cost                                                                    |
 | expiryDate       |     when this domain expires                                                |
@@ -54,11 +52,11 @@ response:
 | avatar           |     avatar url                                                              |
 
 
-### Example 1: query for `vitalik.eth`:
+### Example: query for `vitalik.eth`:
 
 send request via `curl`:
 
-`$ curl https://api.test-ddns.com/name/vitalik.eth`
+`$ curl https://api.ddns.so/name/vitalik.eth`
 
 response data is:
 
@@ -89,11 +87,11 @@ response data is:
 }
 ```
 
-### Example 2: query for "vitalik.eth" with its children domians
+### Query "vitalik.eth" with subdomians
 
 send request via `curl`:
 
-`curl https://api.test-ddns.com/name/vitalik.eth?is_show_subdomains=yes `
+`curl https://api.ddns.so/name/vitalik.eth?subdomains=yes `
 
 response data is:
 
@@ -101,13 +99,11 @@ response data is:
 {
   "result": "ok",
   "data": {
-    // other contents
-    // its subdomains:
+    // other contents...
     "subdomains": [
       {
         "id": "0x1bd80197873de285b67cc9dcf3b2bf196ec112b701f34e89dfc4bfc9fb17b0b2",
-        "name": "[4da432f1ecd4c0ac028ebde3a3f78510a21d54087b161590a63080d33b702b8d].[68562fc74af4dcfac633a803c2f57c2b826827b47f797b6ab4e468dc8607b5d0].[4f5b812789fc606be1b3
-b16908db13fc7a9adf7ca72641f84d75b47069d3d7f0]",
+        "name": "[4da432f1ecd4c0ac028ebde3a3f78510a21d54087b161590a63080d33b702b8d].[68562fc74af4dcfac633a803c2f57c2b826827b47f797b6ab4e468dc8607b5d0].[4f5b812789fc606be1b3b16908db13fc7a9adf7ca72641f84d75b47069d3d7f0]",
         "subdomains": []
       }
     ]
@@ -115,9 +111,9 @@ b16908db13fc7a9adf7ca72641f84d75b47069d3d7f0]",
 }
 ```
 
-## Reverse Parse
+## Reverse Resolution
 
-this method can reverse parse an ETH-address.
+This method can return reverse resolution records of an ETH address.
 
 HTTP method: GET
 
@@ -125,7 +121,7 @@ URL pattern: `/reverse/<TYPE>/<ETH-ADDRESS>`
 
 | Request parameter           | values     | explain  | is required |
 |---------------------|------------|----------|-------------|
-| \<TYPE\>              | [ens\|pns] | which type of result you want to get. e.g if you want ENS name, here should be `ens` | required |
+| \<TYPE\>              | [ens\|pns] | which type of result you want to get. e.g if you want to resolve an ENS name, here should be `ens`, or `pns` for PNS domain names | required |
 | \<ETH-ADDRESS\>       | string     | an ETH address, e.g. `0x0b23E3588c906C3F723C58Ef4d6baEe7840A977c` | required |
 
 
@@ -134,57 +130,57 @@ response:
 | Response JSON key| explain |
 |---------------------|---------|
 | address | the address which is being queried |
-| data    | reverse parsing result             |
+| data    | reverse resolution result             |
 
 
-### Example 1 for ENS
+### Example for ENS
 
 query for ens:
 
 send request with `curl`:
 
-`curl https://api.test-ddns.com/reverse/ens/0x0b23E3588c906C3F723C58Ef4d6baEe7840A977c`
+`curl https://api.ddns.so/reverse/ens/0x0b23E3588c906C3F723C58Ef4d6baEe7840A977c`
 
 response data is:
 
 ```jsx
 {
-  // successfully got response
+  // get response successfully
   "result": "ok",
 
   // the address which is being queried
   "address": "0x0b23E3588c906C3F723C58Ef4d6baEe7840A977c",
 
-  // reverse parsing result
+  // reverse resolution result
   "data": "daydayup666.eth"
 }
 ```
 
-### Example2 for PNS
+### Example for PNS
 
 query for pns:
 
 send request with `curl`:
 
-`curl https://api.test-ddns.com/reverse/pns/0x0b23E3588c906C3F723C58Ef4d6baEe7840A977c`
+`curl https://api.ddns.so/reverse/pns/0x0b23E3588c906C3F723C58Ef4d6baEe7840A977c`
 
 response data is:
 
 ```jsx
 {
-  // successfully got response
+  // get response successfully
   "result": "ok",
 
   // the address which is being queried
   "address": "0x0b23E3588c906C3F723C58Ef4d6baEe7840A977c",
-  // reverse parsing result
-  "data": "ttt112.dot"
+  // reverse resolution result
+  "data": "web3player.dot"
 }
 ```
 
-## Query for domain records
+## Resolving Domain Records
 
-query for a domain's A, CNAME, TXT, IPFS record.
+Query a domain's A, CNAME, TXT or IPFS record.
 
 HTTP method: GET
 
@@ -208,7 +204,7 @@ response:
 
 send request with `curl`:
 
-`curl https://api.test-ddns.com/domain/pns.link`
+`curl https://api.ddns.so/domain/pns.link`
 
 response data is:
 
@@ -239,5 +235,5 @@ Here is the response code table:
 | result code | explain |
 |-------------|---------|
 | ok          | everything goes well in server |
-| error       | something not good |
+| error       | something goes wrong |
 
