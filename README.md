@@ -29,27 +29,27 @@ request:
 
 response:
 
-| Response JSON key            |             explain |
+| field             |             explain |
 |---------------------------------|------------------------------|
-| name             |  the name you are querying e.g. "vitalik.eth", "web3player.dot"  |
-| nameHash         |      nameHash                                                               |
-| labelName        |      domain label                                                           |
-| labelHash        |     labelhash                                                               |
-| owner            |      domain's owner address                                                 |
-| parent           |     parent labelhash                                                        |
-| subdomainCount   |     its subdomains count                                                   |
-| ttl              |     ttl                                                                     |
-| cost             |     cost                                                                    |
-| expiryDate       |     when this domain expires                                                |
-| registrationDate |     when this domain is registered                                          |
-| records          |     these records are set via ENS/PNS console by user                       |
-| contenthash      |     content hash for ipfs                                                   |
-| eth              |     eth address                                                             |
-| dot              |     dot address                                                             |
-| btc              |     btc address                                                             |
-| btc              |     btc address                                                             |
-| text             |     txt address                                                             |
-| avatar           |     avatar url                                                              |
+| name             | the name you are querying e.g. "vitalik.eth", "web3player.dot" |
+| nameHash         | EIP137 namehash for the domain name |
+| labelName        | domain label |
+| labelHash        | labelhash |
+| owner            | domain owner's address |
+| parent           | parent namehash |
+| subdomainCount   | subdomains count |
+| ttl              | ttl |
+| cost             | cost |
+| expiryDate       | when this domain expires |
+| registrationDate | when this domain is registered |
+| records          | domain records |
+| contenthash      | IPFS content hash |
+| eth              | eth address |
+| dot              | dot address |
+| btc              | btc address |
+| btc              | btc address |
+| text             | txt address |
+| avatar           | avatar url |
 
 
 ### Example: query for `vitalik.eth`:
@@ -122,12 +122,12 @@ URL pattern: `/reverse/<TYPE>/<ETH-ADDRESS>`
 | Request parameter           | values     | explain  | is required |
 |---------------------|------------|----------|-------------|
 | \<TYPE\>              | [ens\|pns] | which type of result you want to get. e.g if you want to resolve an ENS name, here should be `ens`, or `pns` for PNS domain names | required |
-| \<ETH-ADDRESS\>       | string     | an ETH address, e.g. `0x0b23E3588c906C3F723C58Ef4d6baEe7840A977c` | required |
+| \<ETH-ADDRESS\>       | string     | an ETH address, e.g. `0xd8da6bf26964af9d7eed9e03e53415d37aa96045` | required |
 
 
 response:
 
-| Response JSON key| explain |
+| field | explain |
 |---------------------|---------|
 | address | the address which is being queried |
 | data    | reverse resolution result             |
@@ -139,7 +139,7 @@ query for ens:
 
 send request with `curl`:
 
-`curl https://api.ddns.so/reverse/ens/0x0b23E3588c906C3F723C58Ef4d6baEe7840A977c`
+`curl https://api.ddns.so/reverse/ens/0xd8da6bf26964af9d7eed9e03e53415d37aa96045`
 
 response data is:
 
@@ -149,7 +149,7 @@ response data is:
   "result": "ok",
 
   // the address which is being queried
-  "address": "0x0b23E3588c906C3F723C58Ef4d6baEe7840A977c",
+  "address": "0xd8da6bf26964af9d7eed9e03e53415d37aa96045",
 
   // reverse resolution result
   "data": "daydayup666.eth"
@@ -162,7 +162,7 @@ query for pns:
 
 send request with `curl`:
 
-`curl https://api.ddns.so/reverse/pns/0x0b23E3588c906C3F723C58Ef4d6baEe7840A977c`
+`curl https://api.ddns.so/reverse/pns/0xd8da6bf26964af9d7eed9e03e53415d37aa96045`
 
 response data is:
 
@@ -172,7 +172,7 @@ response data is:
   "result": "ok",
 
   // the address which is being queried
-  "address": "0x0b23E3588c906C3F723C58Ef4d6baEe7840A977c",
+  "address": "0xd8da6bf26964af9d7eed9e03e53415d37aa96045",
   // reverse resolution result
   "data": "web3player.dot"
 }
@@ -193,7 +193,7 @@ URL pattern: `/domain/<DOMAIN-NAME>?type=<TYPE>`
 
 response:
 
-| Response JSON key| explain |
+| field | explain |
 |---------------------|---------|
 | domain_name | the domain you are querying |
 | value |  result |
