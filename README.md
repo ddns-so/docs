@@ -1,7 +1,7 @@
 <!-- TOC depthFrom:1 depthTo:6 withLinks:1 orderedList:0 -->
 - [Servers](#servers)
 - [API](#api-methods)
-	- [Resolving Names for ENS/PNS/BIT/LENS](#resolving-names)
+	- [Resolving Names for ENS/PNS/BIT/LENS](#resolving-names-for-enspnsbitlens)
   - [Reverse Resolution](#reverse-resolution)
   - [Resolving Domain Records](#resolving-domain-records)
 - [response code](#response-code)
@@ -153,7 +153,7 @@ URL pattern: `/reverse/<TYPE>/<ETH-ADDRESS>`
 
 | Request parameter           | values     | explain  | is required |
 |---------------------|------------|----------|-------------|
-| \<TYPE\>              | [ens\|pns|bit] | which type of result you want to get. e.g if you want to resolve an ENS name, here should be `ens`, `pns` for PNS domain namesor `bit` for BIT domain names | required |
+| \<TYPE\>              | [ens\|pns\|bit] | which type of result you want to get. e.g if you want to resolve an ENS name, here should be `ens`, `pns` for PNS domain namesor `bit` for BIT domain names | required |
 | \<ETH-ADDRESS\>       | string     | an ETH address, e.g. `0xd8da6bf26964af9d7eed9e03e53415d37aa96045` | required |
 
 
