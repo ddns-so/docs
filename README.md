@@ -1,7 +1,7 @@
 <!-- TOC depthFrom:1 depthTo:6 withLinks:1 orderedList:0 -->
 - [Servers](#servers)
 - [API](#api-methods)
-	- [Resolving Names for ENS/PNS/BIT](#resolving-names)
+	- [Resolving Names for ENS/PNS/BIT/LENS](#resolving-names)
   - [Reverse Resolution](#reverse-resolution)
   - [Resolving Domain Records](#resolving-domain-records)
 - [response code](#response-code)
@@ -14,7 +14,7 @@ Production Server： https://api.ddns.so
 
 # API Methods
 
-## Resolving Names for ENS/PNS
+## Resolving Names for ENS/PNS/BIT/LENS
 
 HTTP method: GET
 
@@ -26,7 +26,7 @@ request:
 |---------------------|---------|----------|-------------|
 | \<DOMAIN-NAME\>       | string  | ens , pns, lens or bit name, e.g. "vitalik.eth", "web3player.dot", "jouni.lens", "phone.bit"  | required |
 | subdomains  | [yes\|no]               | whether list its children domains or not. default is `no`.(Lens domain name does not support subdomain name) | optional |
-| page | [1..n]               | When querying the sub domain name, you can page up to 20 entries per page | optional |
+| page | [1|2|3|..|n]               | When querying the sub domain name, you can page up to 20 entries per page | optional |
 
 response:
 
