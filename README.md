@@ -26,7 +26,7 @@ request:
 |---------------------|---------|----------|-------------|
 | \<DOMAIN-NAME\>       | string  | ens , pns, lens or bit name, e.g. "vitalik.eth", "web3player.dot", "jouni.lens", "phone.bit"  | required |
 | subdomains  | [yes\|no]               | whether list its children domains or not. default is `no`.(Lens domain name does not support subdomain name) | optional |
-| page | [1\|\2\|3\|..\|n]               | When querying the sub domain name, you can page up to 20 entries per page | optional |
+| page | [1\|2\|3\|..\|n]               | When querying the sub domain name, you can page up to 20 entries per page | optional |
 
 response:
 
@@ -108,35 +108,6 @@ response data is:
         "id": "0x1bd80197873de285b67cc9dcf3b2bf196ec112b701f34e89dfc4bfc9fb17b0b2",
         "name": "[4da432f1ecd4c0ac028ebde3a3f78510a21d54087b161590a63080d33b702b8d].[68562fc74af4dcfac633a803c2f57c2b826827b47f797b6ab4e468dc8607b5d0].[4f5b812789fc606be1b3b16908db13fc7a9adf7ca72641f84d75b47069d3d7f0]",
         "subdomains": []
-      }
-    ]
-  }
-}
-```
-
-### Query "0x.bit" with subdomians and page
-
-send request via `curl`:
-
-`curl https://api.ddns.so/name/0x.bit?subdomains=yes&page=3`
-
-response data is:
-
-```jsx
-{
-  "result": "ok",
-  "data": {
-    // other contents...
-    "page": 3,
-    "per": 20,
-    "subdomains": [
-      {
-        "name": "-077.0x.bit",
-        "owner": "0x44ce40a40b38f00841dfb00d9cab3f4149c5250a"
-      },
-      {
-        "name": "-080.0x.bit",
-        "owner": "0x625dd3ae692d01d7674232720487729619991999"
       }
     ]
   }
