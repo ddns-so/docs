@@ -1,8 +1,8 @@
 <!-- TOC depthFrom:1 depthTo:6 withLinks:1 orderedList:0 -->
 - [Servers](#servers)
 - [API](#api-methods)
-	- [Resolving Names for ENS/PNS](#resolving-names)
-	- [Reverse Resolution](#reverse-resolution)
+	- [Resolving Names for ENS/PNS/BIT](#resolving-names)
+  - [Reverse Resolution](#reverse-resolution)
   - [Resolving Domain Records](#resolving-domain-records)
 - [response code](#response-code)
 
@@ -24,8 +24,9 @@ request:
 
 | Request Parameter   | values  | explain  | is required |
 |---------------------|---------|----------|-------------|
-| \<DOMAIN-NAME\>       | string  | ens or pns name, e.g. "vitalik.eth", "web3player.dot"  | required |
-| subdomains  | [yes\|no]               | whether list its children domains or not. default is `no` | optional |
+| \<DOMAIN-NAME\>       | string  | ens , pns, lens or bit name, e.g. "vitalik.eth", "web3player.dot", "jouni.lens", "phone.bit"  | required |
+| subdomains  | [yes\|no]               | whether list its children domains or not. default is `no`.(Lens domain name does not support subdomain name) | optional |
+| page | [1..n]               | When querying the sub domain name, you can page up to 20 entries per page | optional |
 
 response:
 
@@ -87,11 +88,11 @@ response data is:
 }
 ```
 
-### Query "vitalik.eth" with subdomians
+### Query "vitalik.eth" with subdomians and page
 
 send request via `curl`:
 
-`curl https://api.ddns.so/name/vitalik.eth?subdomains=yes `
+`curl https://api.ddns.so/name/vitalik.eth?subdomains=yes&page=1`
 
 response data is:
 
@@ -100,11 +101,42 @@ response data is:
   "result": "ok",
   "data": {
     // other contents...
+    "page": 1,
+    "per": 20,
     "subdomains": [
       {
         "id": "0x1bd80197873de285b67cc9dcf3b2bf196ec112b701f34e89dfc4bfc9fb17b0b2",
         "name": "[4da432f1ecd4c0ac028ebde3a3f78510a21d54087b161590a63080d33b702b8d].[68562fc74af4dcfac633a803c2f57c2b826827b47f797b6ab4e468dc8607b5d0].[4f5b812789fc606be1b3b16908db13fc7a9adf7ca72641f84d75b47069d3d7f0]",
         "subdomains": []
+      }
+    ]
+  }
+}
+```
+
+### Query "0x.bit" with subdomians and page
+
+send request via `curl`:
+
+`curl https://api.ddns.so/name/0x.bit?subdomains=yes&page=3`
+
+response data is:
+
+```jsx
+{
+  "result": "ok",
+  "data": {
+    // other contents...
+    "page": 3,
+    "per": 20,
+    "subdomains": [
+      {
+        "name": "-077.0x.bit",
+        "owner": "0x44ce40a40b38f00841dfb00d9cab3f4149c5250a"
+      },
+      {
+        "name": "-080.0x.bit",
+        "owner": "0x625dd3ae692d01d7674232720487729619991999"
       }
     ]
   }
@@ -121,7 +153,7 @@ URL pattern: `/reverse/<TYPE>/<ETH-ADDRESS>`
 
 | Request parameter           | values     | explain  | is required |
 |---------------------|------------|----------|-------------|
-| \<TYPE\>              | [ens\|pns] | which type of result you want to get. e.g if you want to resolve an ENS name, here should be `ens`, or `pns` for PNS domain names | required |
+| \<TYPE\>              | [ens\|pns|bit] | which type of result you want to get. e.g if you want to resolve an ENS name, here should be `ens`, `pns` for PNS domain namesor `bit` for BIT domain names | required |
 | \<ETH-ADDRESS\>       | string     | an ETH address, e.g. `0xd8da6bf26964af9d7eed9e03e53415d37aa96045` | required |
 
 
@@ -175,6 +207,28 @@ response data is:
   "address": "0xd8da6bf26964af9d7eed9e03e53415d37aa96045",
   // reverse resolution result
   "data": "web3player.dot"
+}
+```
+
+### Example for BIT
+
+query for bit:
+
+send request with `curl`:
+
+`curl https://api.ddns.so/reverse/bit/0x9176acd39a3a9ae99dcb3922757f8af4f94cdf3c`
+
+response data is:
+
+```jsx
+{
+  // get response successfully
+  "result": "ok",
+
+  // the address which is being queried
+  "address": "0x9176acd39a3a9ae99dcb3922757f8af4f94cdf3c",
+  // reverse resolution result
+  "data": "justing.bit"
 }
 ```
 
