@@ -26,7 +26,7 @@ request:
 |---------------------|---------|----------|-------------|
 | \<DOMAIN-NAME\>       | string  | ens , pns, lens or bit name, e.g. "vitalik.eth", "web3player.dot", "jouni.lens", "phone.bit"  | required |
 | subdomains  | [yes\|no]               | whether list its children domains or not. default is `no`.(Lens domain name does not support subdomain name) | optional |
-| page | [1\|2\|3\|..\|n]               | When querying the sub domain name, you can page up to 20 entries per page | optional |
+| page | [1\|2\|3\|..\|n]               | When querying the sub domain name, you can page up to 20 entries per page, default is `1` | optional |
 
 response:
 
@@ -92,7 +92,7 @@ response data is:
 
 send request via `curl`:
 
-`curl https://api.ddns.so/name/vitalik.eth?subdomains=yes&page=1`
+`curl https://api.ddns.so/name/vitalik.eth?subdomains=yes`
 
 response data is:
 
